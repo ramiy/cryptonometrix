@@ -36,14 +36,14 @@ export default {
           id: "sidebar-btc-production",
           label: "BTC Production",
           link: "/btc-production/",
-          suffix: "Free",
+          suffix: "New",
           stocks: true,
         },
         {
           id: "sidebar-btc-hodl-position",
           label: "BTC HODL Position",
           link: "/btc-hodl-position/",
-          suffix: "Free",
+          suffix: "New",
           stocks: true,
         },
         {
