@@ -1,0 +1,58 @@
+export default [
+  {
+    id: "mara",
+    exchange: "NASDAQ",
+    symbol: "MARA",
+    name: "Marathon Digital Holdings, Inc.",
+    label: "Mara",
+    website: "https://marathondh.com/",
+  },
+  {
+    id: "riot",
+    exchange: "NASDAQ",
+    symbol: "RIOT",
+    name: "Riot Blockchain, Inc.",
+    label: "Riot",
+    website: "https://www.riotblockchain.com/",
+  },
+  {
+    id: "hut8",
+    exchange: "NASDAQ",
+    symbol: "HUT",
+    name: "Hut 8 Mining Corp.",
+    label: "Hut8",
+    website: "https://hut8mining.com/",
+  },
+  {
+    id: "bitf",
+    exchange: "NASDAQ",
+    symbol: "BITF",
+    name: "Bitfarms Ltd.",
+    label: "Bitfarms",
+    website: "https://bitfarms.com/",
+  },
+  {
+    id: "hive",
+    exchange: "NASDAQ",
+    symbol: "HVBT",
+    name: "HIVE Blockchain Technologies Ltd.",
+    label: "Hive",
+    website: "https://www.hiveblockchain.com/",
+  },
+  {
+    id: "argo",
+    exchange: "NASDAQ",
+    symbol: "ARBKF",
+    name: "Argo Blockchain plc",
+    label: "Argo",
+    website: "https://argoblockchain.com/",
+  },
+  {
+    id: "btbt",
+    exchange: "NASDAQ",
+    symbol: "BTBT",
+    name: "Bit Digital, Inc.",
+    label: "Bit Digital",
+    website: "https://bit-digital.com/",
+  }
+]
