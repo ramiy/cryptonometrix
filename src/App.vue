@@ -1,8 +1,8 @@
 <template>
   <appNav></appNav>
   <appView>
-    <appSidebar></appSidebar>
     <appContent></appContent>
+    <appSidebar></appSidebar>
   </appView>
 </template>
 
@@ -35,6 +35,9 @@ body {
   margin: 0;
   color: #333;
   font-size: 16px;
+}
+* {
+  box-sizing: border-box;
 }
 h1 {
   font-size: 2rem;

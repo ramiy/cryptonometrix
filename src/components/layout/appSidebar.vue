@@ -69,6 +69,7 @@ export default {
 
 <style scoped>
 aside {
+  flex: 0;
   flex-basis: 300px;
 
   position: sticky;
@@ -76,7 +77,7 @@ aside {
   top: 0;
   bottom: 0;
 
-  padding: 10px;
+  padding: calc( var(--gap) * 0.33);
   border-right: 1px solid #ddd;
   background-color: #fff;
   overflow: auto;
@@ -143,5 +144,14 @@ aside::-webkit-scrollbar-track {
 aside::-webkit-scrollbar-thumb {
   border-radius: 8px;
   background-color: rgba(0, 0, 0, 0.2);
+}
+@media screen and (max-width: 768px) {
+  aside {
+    height: unset;
+    bottom: unset;
+    top: unset;
+    padding: var(--gap);
+    border-right: unset;
+  }
 }
 </style>
