@@ -49,17 +49,17 @@ export default {
         {
           id: "sidebar-hashrate",
           label: "Hashrate",
-          prefix: "soon",
+          suffix: "Soon",
         },
         {
           id: "sidebar-market-cap",
           label: "Market Cap",
-          prefix: "soon",
+          suffix: "Soon",
         },
         {
           id: "sidebar-number-of-shares",
           label: "Number of Shares",
-          prefix: "soon",
+          suffix: "Soon",
         },
       ],
     };
