@@ -78,6 +78,9 @@ a:hover,
 a:focus {
   color: #333;
 }
+img {
+  max-width: 100%;
+}
 table td,
 table th {
   padding: 0.75rem;

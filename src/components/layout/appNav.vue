@@ -1,6 +1,6 @@
 <template>
   <header>
-    <router-link to="/">
+    <router-link to="/" class="logo">
       <img src="@/assets/logo.png" />
     </router-link>
     <nav>
@@ -19,8 +19,12 @@ header {
   padding: 5px 20px;
   user-select: none;
 }
+.logo {
+  display: flex;
+  align-items: center;
+}
 img {
-  height: 100%;
+  height: 75%;
   width: auto;
 }
 nav {
