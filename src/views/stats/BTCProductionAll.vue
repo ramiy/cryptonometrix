@@ -28,7 +28,6 @@
 import Card from "@/components/Card.vue";
 import DataComparisonChart from "@/components/data/DataComparisonChart.vue";
 import DataMetrics from "@/components/data/DataMetrics.vue";
-import stocks from "@/data/stocks.js";
 import btcProduction from "@/data/btc-production.js";
 
 export default {
@@ -40,7 +39,6 @@ export default {
   },
   data() {
     return {
-      stocks: stocks,
       items: [],
       maxVal: 500,
     };

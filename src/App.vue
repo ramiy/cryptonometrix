@@ -11,6 +11,7 @@ import appNav from "@/components/layout/appNav.vue";
 import appView from "@/components/layout/appView.vue";
 import appSidebar from "@/components/layout/appSidebar.vue";
 import appContent from "@/components/layout/appContent.vue";
+import stocks from "@/data/stocks.js";
 
 export default {
   name: "App",
@@ -19,6 +20,9 @@ export default {
     appView,
     appSidebar,
     appContent,
+  },
+  provide: {
+    stocks: stocks,
   },
 };
 </script>

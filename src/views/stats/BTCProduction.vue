@@ -37,7 +37,6 @@ import Card from "@/components/Card.vue";
 import DataChart from "@/components/data/DataChart.vue";
 import DataTable from "@/components/data/DataTable.vue";
 import DataMetrics from "@/components/data/DataMetrics.vue";
-import stocks from "@/data/stocks.js";
 import btcProduction from "@/data/btc-production.js";
 
 export default {
@@ -48,9 +47,9 @@ export default {
     DataTable,
     DataMetrics,
   },
+  inject: ["stocks"],
   data() {
     return {
-      stocks: stocks,
       labels: ["Company", "Month", "Produced BTC", "Notes"],
       items: [],
     };
@@ -82,7 +81,9 @@ export default {
       const hasCompany = this.route ? true : false;
       const validCompany = this.stocks.some((stock) => stock.id === this.route);
       if (hasCompany && validCompany) {
-        this.items = btcProduction.find((item) => item.name === this.route).stats;
+        this.items = btcProduction.find(
+          (item) => item.name === this.route
+        ).stats;
       }
     },
   },

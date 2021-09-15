@@ -25,12 +25,10 @@
 </template>
 
 <script>
-import stocks from "@/data/stocks.js";
-
 export default {
+  inject: ["stocks"],
   data() {
     return {
-      stocks: stocks,
       nav: [
         {
           id: "sidebar-btc-production",
