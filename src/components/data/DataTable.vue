@@ -11,7 +11,11 @@
       <tr v-for="(item, index) in data" :key="`${id}-data-${index}`">
         <td>{{ item.company }}</td>
         <td>{{ item.label }}</td>
-        <td>{{ item.btc.toLocaleString("en-US") }}</td>
+        <td>
+          <template v-if="item.btc">
+            {{ item.btc.toLocaleString("en-US") }}
+          </template>
+        </td>
         <td>
           <sub v-if="item.source">
             <a :href="item.source" target="_blank"> [source] </a>
