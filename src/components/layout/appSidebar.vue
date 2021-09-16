@@ -1,7 +1,7 @@
 <template>
   <aside>
     <ul>
-      <li v-for="(item, index) in nav" :key="`sidebar-${index}`">
+      <li v-for="(item, index) in sidebar" :key="`sidebar-${index}`">
         <div>
           <span class="prefix" v-if="item.prefix"> {{ item.prefix }} </span>
           <span class="label" v-if="item.link">
@@ -25,41 +25,14 @@
 </template>
 
 <script>
+import sidebar from "@/data/sidebar.js";
+
 export default {
+  name: "appSidebar",
   inject: ["stocks"],
   data() {
     return {
-      nav: [
-        {
-          id: "sidebar-btc-production",
-          label: "BTC Production",
-          link: "/btc-production/",
-          suffix: "New",
-          stocks: true,
-        },
-        {
-          id: "sidebar-btc-hodl-position",
-          label: "BTC HODL Position",
-          link: "/btc-hodl-position/",
-          suffix: "New",
-          stocks: true,
-        },
-        {
-          id: "sidebar-hashrate",
-          label: "Hashrate",
-          suffix: "Soon",
-        },
-        {
-          id: "sidebar-market-cap",
-          label: "Market Cap",
-          suffix: "Soon",
-        },
-        {
-          id: "sidebar-number-of-shares",
-          label: "Number of Shares",
-          suffix: "Soon",
-        },
-      ],
+      sidebar: sidebar,
     };
   },
 };
@@ -75,7 +48,7 @@ aside {
   top: 0;
   bottom: 0;
 
-  padding: calc( var(--gap) * 0.33);
+  padding: calc(var(--gap) * 0.33);
   border-right: 1px solid #ddd;
   background-color: #fff;
   overflow: auto;
