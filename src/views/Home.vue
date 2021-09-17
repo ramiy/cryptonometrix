@@ -10,11 +10,13 @@
     </p>
     <p>
       The blockchain ecosystem is huge. Investors can invest in funds, ETFs,
-      stocks and other financial instruments. One of
+      stocks and other financial instruments. This site focuses on publicly
+      traded companies mining bitcoins, the bank of the future.
     </p>
     <p>
-      Cryptonometrix is a data and intelligence provider that generates
-      innovative metrics and tools for crypto mining stocks.
+      Cryptonometrix is a data and intelligence provider that aggregates data to
+      generate innovative metrics and tools for investors in the crypto mining
+      sector.
     </p>
   </Card>
 </template>
