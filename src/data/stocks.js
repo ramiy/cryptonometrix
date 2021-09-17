@@ -54,5 +54,13 @@ export default [
     name: "Bit Digital, Inc.",
     label: "Bit Digital",
     website: "https://bit-digital.com/",
+  },
+  {
+    id: "hsshf",
+    exchange: "NASDAQ",
+    symbol: "HSSHF",
+    name: "Digihost Technology Inc.",
+    label: "Digihost",
+    website: "https://digihost.ca/",
   }
 ]

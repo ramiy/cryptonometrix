@@ -5,6 +5,7 @@ import bitf from "@/data/btc-production/bitf.js";
 import hive from "@/data/btc-production/hive.js";
 import argo from "@/data/btc-production/argo.js";
 import btbt from "@/data/btc-production/btbt.js";
+import hsshf from "@/data/btc-production/hsshf.js";
 
 export default [
   { name: "mara", stats: mara },
@@ -14,4 +15,5 @@ export default [
   { name: "hive", stats: hive },
   { name: "argo", stats: argo },
   { name: "btbt", stats: btbt },
+  { name: "hsshf", stats: hsshf },
 ]
