@@ -13,7 +13,7 @@
   <Card heading="HODL Position Data">
     <DataTable
       :id="`btc-hodl-position-${route}`"
-      :labels="labels"
+      :labels="['Company', 'Month', 'Produced BTC', 'Notes']"
       :data="itemsForDisplay"
     ></DataTable>
   </Card>
@@ -50,7 +50,6 @@ export default {
   inject: ["stocks"],
   data() {
     return {
-      labels: ["Company", "Month", "Produced BTC", "Notes"],
       items: [],
     };
   },
