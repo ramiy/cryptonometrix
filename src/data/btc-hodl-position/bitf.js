@@ -14,8 +14,8 @@ export default [
   {
     year: 2021,
     month: 3,
-    btc: 0,
-    source: ""
+    btc: 1000,
+    source: "https://bitfarms.com/app/uploads/2021/05/BITFARMS-Q1-2021-PR-Final-Clean.pdf"
   },
   {
     year: 2021,
@@ -32,8 +32,8 @@ export default [
   {
     year: 2021,
     month: 6,
-    btc: 0,
-    source: ""
+    btc: 1293,
+    source: "https://bitfarms.com/app/uploads/2021/08/BITFARMS-Q2-2021-PR-FINAL.pdf"
   },
   {
     year: 2021,
