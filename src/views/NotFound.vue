@@ -1,45 +1,11 @@
 <template>
-  <div class="404">
-    <h1>Not Found</h1>
-    <Card heading="About Heading">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
-        eius, maiores inventore blanditiis aut labore deleniti beatae veniam
-        necessitatibus sapiente facere ut. Incidunt dolorem aperiam sit,
-        obcaecati maiores placeat ea? Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Temporibus eius, maiores inventore blanditiis aut
-        labore deleniti beatae veniam necessitatibus sapiente facere ut.
-        Incidunt dolorem aperiam sit, obcaecati maiores placeat ea?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
-        eius, maiores inventore blanditiis aut labore deleniti beatae veniam
-        necessitatibus sapiente facere ut. Incidunt dolorem aperiam sit,
-        obcaecati maiores placeat ea? Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Temporibus eius, maiores inventore blanditiis aut
-        labore deleniti beatae veniam necessitatibus sapiente facere ut.
-        Incidunt dolorem aperiam sit, obcaecati maiores placeat ea?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
-        eius, maiores inventore blanditiis aut labore deleniti beatae veniam
-        necessitatibus sapiente facere ut. Incidunt dolorem aperiam sit,
-        obcaecati maiores placeat ea? Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Temporibus eius, maiores inventore blanditiis aut
-        labore deleniti beatae veniam necessitatibus sapiente facere ut.
-        Incidunt dolorem aperiam sit, obcaecati maiores placeat ea?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
-        eius, maiores inventore blanditiis aut labore deleniti beatae veniam
-        necessitatibus sapiente facere ut. Incidunt dolorem aperiam sit,
-        obcaecati maiores placeat ea? Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Temporibus eius, maiores inventore blanditiis aut
-        labore deleniti beatae veniam necessitatibus sapiente facere ut.
-        Incidunt dolorem aperiam sit, obcaecati maiores placeat ea?
-      </p>
-    </Card>
-  </div>
+  <h1>Page Not Found</h1>
+
+  <Card heading="404 Error">
+    <p>
+      The page you were looking for was not found.
+    </p>
+  </Card>
 </template>
 
 <script>
