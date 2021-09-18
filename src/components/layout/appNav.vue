@@ -1,7 +1,7 @@
 <template>
   <header>
     <router-link to="/" class="logo">
-      <img src="/assets/img/logo.png" />
+      <img src="/assets/img/logo.png" alt="Cryptonometrix Logo" loading="eager" />
     </router-link>
     <nav>
       <router-link to="/">Home</router-link>
