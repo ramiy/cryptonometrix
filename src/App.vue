@@ -39,6 +39,7 @@ body {
   margin: 0;
   color: #333;
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 * {
   box-sizing: border-box;
