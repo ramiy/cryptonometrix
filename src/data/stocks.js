@@ -6,6 +6,7 @@ export default [
     name: "Marathon Digital Holdings, Inc.",
     label: "Mara",
     website: "https://marathondh.com/",
+    img: "mara.png"
   },
   {
     id: "riot",
@@ -14,6 +15,7 @@ export default [
     name: "Riot Blockchain, Inc.",
     label: "Riot",
     website: "https://www.riotblockchain.com/",
+    img: "riot.png"
   },
   {
     id: "hut8",
@@ -22,6 +24,7 @@ export default [
     name: "Hut 8 Mining Corp.",
     label: "Hut8",
     website: "https://hut8mining.com/",
+    img: "hut8.jpg"
   },
   {
     id: "bitf",
@@ -30,6 +33,7 @@ export default [
     name: "Bitfarms Ltd.",
     label: "Bitfarms",
     website: "https://bitfarms.com/",
+    img: "bitf.jpg"
   },
   {
     id: "hive",
@@ -38,6 +42,7 @@ export default [
     name: "HIVE Blockchain Technologies Ltd.",
     label: "Hive",
     website: "https://www.hiveblockchain.com/",
+    img: "hive.jpg"
   },
   {
     id: "argo",
@@ -46,6 +51,7 @@ export default [
     name: "Argo Blockchain plc",
     label: "Argo",
     website: "https://argoblockchain.com/",
+    img: "argo.jpg"
   },
   {
     id: "btbt",
@@ -54,6 +60,7 @@ export default [
     name: "Bit Digital, Inc.",
     label: "Bit Digital",
     website: "https://bit-digital.com/",
+    img: "btbt.png"
   },
   {
     id: "hsshf",
@@ -62,5 +69,6 @@ export default [
     name: "Digihost Technology Inc.",
     label: "Digihost",
     website: "https://digihost.ca/",
+    img: "hsshf.png"
   }
 ]

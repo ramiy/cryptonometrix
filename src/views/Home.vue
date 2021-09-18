@@ -21,18 +21,14 @@
   </Card>
 
   <Card heading="Bitcoin Mining Stocks">
-    <p>
-      <strong>Stocks:</strong>
-      <span
-        v-for="stock in stocks"
-        :key="`home-stocks-${stock.id}`"
-        class="home-stock"
-      >
+    <div class="stocks-logos">
+      <div v-for="stock in stocks" :key="`home-stocks-logos-${stock.id}`">
         <router-link :to="`/company/${stock.id}`">
-          {{ stock.label }}
+          <img :src="`/assets/img/logos/${stock.img}`" /><br />
+          <span>{{ stock.label }}</span>
         </router-link>
-      </span>
-    </p>
+      </div>
+    </div>
   </Card>
 </template>
 
@@ -49,14 +45,23 @@ export default {
 </script>
 
 <style scoped>
-.home-stock {
-  display: inline-block;
-  padding-inline-start: 0.75rem;
+.stocks-logos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  text-align: center;
 }
-.home-stock a {
+.stocks-logos img {
+  border: 1px solid #ccc;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+.stocks-logos span {
   border-bottom: 1px dotted currentColor;
 }
-.home-stock:not(:last-of-type):after {
-  content: ",";
+@media screen and (max-width: 768px) {
+  .stocks-logos {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 </style>
