@@ -9,14 +9,14 @@
     </thead>
     <tbody>
       <tr v-for="(item, index) in data" :key="`${id}-data-${index}`">
-        <td>{{ item.company }}</td>
-        <td>{{ item.label }}</td>
-        <td>
+        <td :data-mobile-label="labels[0]">{{ item.company }}</td>
+        <td :data-mobile-label="labels[1]">{{ item.label }}</td>
+        <td :data-mobile-label="labels[2]">
           <template v-if="item.btc">
             {{ item.btc.toLocaleString("en-US") }}
           </template>
         </td>
-        <td>
+        <td :data-mobile-label="labels[3]">
           <sub v-if="item.source">
             <a :href="item.source" target="_blank"> [source] </a>
           </sub>
@@ -48,5 +48,24 @@ export default {
 }
 .data-table thead {
   background-color: #f6f6f6;
+}
+@media screen and (max-width: 768px) {
+  .data-table thead {
+    display: none;
+  }
+  .data-table tbody th,
+  .data-table tbody td {
+    display: block;
+  }
+  .data-table tbody td:before {
+    content: attr(data-mobile-label);
+    display: block;
+    width: 45%;
+    float: left;
+    font-weight: bold;
+  }
+  .data-table tbody tr:nth-child(even) {
+    background-color: #f3f3f3;
+  }
 }
 </style>
