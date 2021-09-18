@@ -2,7 +2,7 @@
   <h1><strong>Crypto</strong>nometrix</h1>
 
   <Card heading="Welcome">
-    <img src="@/assets/hero.png" />
+    <img src="/assets/img/hero.png" />
     <p>
       The capital market contains many blockchain-related stocks. These stocks
       allow investors to be exposed to the crypto industry without purchasing
