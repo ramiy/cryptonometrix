@@ -19,6 +19,21 @@
       sector.
     </p>
   </Card>
+
+  <Card heading="Bitcoin Mining Stocks">
+    <p>
+      <strong>Stocks:</strong>
+      <span
+        v-for="stock in stocks"
+        :key="`home-stocks-${stock.id}`"
+        class="home-stock"
+      >
+        <router-link :to="`/company/${stock.id}`">
+          {{ stock.label }}
+        </router-link>
+      </span>
+    </p>
+  </Card>
 </template>
 
 <script>
@@ -29,5 +44,19 @@ export default {
   components: {
     Card,
   },
+  inject: ["stocks"],
 };
 </script>
+
+<style scoped>
+.home-stock {
+  display: inline-block;
+  padding-inline-start: 0.75rem;
+}
+.home-stock a {
+  border-bottom: 1px dotted currentColor;
+}
+.home-stock:not(:last-of-type):after {
+  content: ",";
+}
+</style>

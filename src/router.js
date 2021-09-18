@@ -5,6 +5,7 @@ import BTCProduction from '@/views/stats/BTCProduction.vue'
 import BTCProductionAll from '@/views/stats/BTCProductionAll.vue'
 import BTCHodlPosition from '@/views/stats/BTCHodlPosition.vue'
 import BTCHodlPositionAll from '@/views/stats/BTCHodlPositionAll.vue'
+import Company from '@/views/stats/Company.vue'
 import NotFound from '@/views/NotFound.vue'
 
 const routes = [
@@ -37,6 +38,11 @@ const routes = [
     path: '/btc-hodl-position/',
     name: 'BTCHodlPositionAll',
     component: BTCHodlPositionAll,
+  },
+  {
+    path: '/company/:company',
+    name: 'Company',
+    component: Company,
   },
   {
     path: "/:catchAll(.*)",
