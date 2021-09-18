@@ -10,7 +10,7 @@
   flex-direction: row-reverse;
   background-color: rgb(247, 248, 250);
 }
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .view {
     display: block;
   }
