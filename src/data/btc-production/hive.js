@@ -83,4 +83,61 @@ export default [
     btc: 0,
     source: ""
   },
+  /* Quarterly */
+  {
+    type: "quarterly",
+    year: 2020,
+    quarter: 1,
+    btc: 0,
+    source: ""
+  },
+  {
+    type: "quarterly",
+    year: 2020,
+    quarter: 2,
+    btc: 0,
+    source: ""
+  },
+  {
+    type: "quarterly",
+    year: 2020,
+    quarter: 3,
+    btc: 0,
+    source: ""
+  },
+  {
+    type: "quarterly",
+    year: 2020,
+    quarter: 4,
+    btc: 0,
+    source: ""
+  },
+  {
+    type: "quarterly",
+    year: 2021,
+    quarter: 1,
+    btc: 0,
+    source: ""
+  },
+  {
+    type: "quarterly",
+    year: 2021,
+    quarter: 2,
+    btc: 0,
+    source: ""
+  },
+  {
+    type: "quarterly",
+    year: 2021,
+    quarter: 3,
+    btc: 0,
+    source: ""
+  },
+  {
+    type: "quarterly",
+    year: 2021,
+    quarter: 4,
+    btc: 0,
+    source: ""
+  },
 ]

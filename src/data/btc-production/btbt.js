@@ -83,6 +83,7 @@ export default [
     btc: 0,
     source: ""
   },
+  /* Quarterly */
   {
     type: "quarterly",
     year: 2020,
@@ -108,22 +109,22 @@ export default [
     type: "quarterly",
     year: 2020,
     quarter: 4,
-    btc: 695.96,
-    source: ""
+    btc: 695.97,
+    source: "https://bit-digital.com/press-releases/bit-digital-inc-announces-2020-financial-highlights/"
   },
   {
     type: "quarterly",
     year: 2021,
     quarter: 1,
     btc: 1013.4,
-    source: ""
+    source: "https://bit-digital.com/press-releases/bit-digital-inc-announces-first-quarter-of-fiscal-year-2021-financial-results/"
   },
   {
     type: "quarterly",
     year: 2021,
     quarter: 2,
     btc: 562.9,
-    source: ""
+    source: "https://bit-digital.com/press-releases/bit-digital-inc-announces-second-quarter-of-fiscal-year-2021-financial-results/"
   },
   {
     type: "quarterly",

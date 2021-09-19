@@ -65,7 +65,7 @@ export default {
       if (this.filterResolution.value === "monthly") {
         maxValue = 7000;
       } else if (this.filterResolution.value === "quarterly") {
-        maxValue = 20000;
+        maxValue = 6000;
       }
       return maxValue;
     },

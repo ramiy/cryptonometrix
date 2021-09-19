@@ -83,4 +83,61 @@ export default [
     btc: 0,
     source: ""
   },
+  /* Quarterly */
+  {
+    type: "quarterly",
+    year: 2020,
+    quarter: 1,
+    btc: 0,
+    source: "https://bitfarms.com/app/uploads/2020/06/BITFARMS-Q1-2020-News-Release-Final.pdf"
+  },
+  {
+    type: "quarterly",
+    year: 2020,
+    quarter: 2,
+    btc: 0,
+    source: "https://www.businesswire.com/news/home/20200828005036/en/"
+  },
+  {
+    type: "quarterly",
+    year: 2020,
+    quarter: 3,
+    btc: 0,
+    source: "https://www.businesswire.com/news/home/20201126005462/en/Bitfarms-Reports-Q3-2020-Financial-Results"
+  },
+  {
+    type: "quarterly",
+    year: 2020,
+    quarter: 4,
+    btc: 0,
+    source: "https://bitfarms.com/app/uploads/2021/03/BITFARMS-Q4-2020-NEWS-RELEASE-FINAL.pdf"
+  },
+  {
+    type: "quarterly",
+    year: 2021,
+    quarter: 1,
+    btc: 548,
+    source: "https://bitfarms.com/app/uploads/2021/05/BITFARMS-Q1-2021-PR-Final-Clean.pdf"
+  },
+  {
+    type: "quarterly",
+    year: 2021,
+    quarter: 2,
+    btc: 1293,
+    source: "https://bitfarms.com/app/uploads/2021/08/BITFARMS-Q2-2021-PR-FINAL.pdf"
+  },
+  {
+    type: "quarterly",
+    year: 2021,
+    quarter: 3,
+    btc: 0,
+    source: ""
+  },
+  {
+    type: "quarterly",
+    year: 2021,
+    quarter: 4,
+    btc: 0,
+    source: ""
+  },
 ]

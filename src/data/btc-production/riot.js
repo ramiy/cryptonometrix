@@ -83,4 +83,61 @@ export default [
     btc: 0,
     source: ""
   },
+  /* Quarterly */
+  {
+    type: "quarterly",
+    year: 2020,
+    quarter: 1,
+    btc: 281,
+    source: "https://www.riotblockchain.com/news-media/press-releases/detail/82/riot-blockchain-reports-first-quarter-2020-financial"
+  },
+  {
+    type: "quarterly",
+    year: 2020,
+    quarter: 2,
+    btc: 227,
+    source: "https://www.riotblockchain.com/news-media/press-releases/detail/86/riot-blockchain-reports-second-quarter-2020-financial"
+  },
+  {
+    type: "quarterly",
+    year: 2020,
+    quarter: 3,
+    btc: 222,
+    source: "https://www.riotblockchain.com/news-media/press-releases/detail/101/riot-blockchain-announces-financial-highlights-for-the"
+  },
+  {
+    type: "quarterly",
+    year: 2020,
+    quarter: 4,
+    btc: 303,
+    source: "https://www.riotblockchain.com/news-media/press-releases/detail/101/riot-blockchain-announces-financial-highlights-for-the"
+  },
+  {
+    type: "quarterly",
+    year: 2021,
+    quarter: 1,
+    btc: 0,
+    source: ""
+  },
+  {
+    type: "quarterly",
+    year: 2021,
+    quarter: 2,
+    btc: 0,
+    source: "https://www.riotblockchain.com/news-media/press-releases/detail/113/riot-blockchain-reports-record-second-quarter-2021"
+  },
+  {
+    type: "quarterly",
+    year: 2021,
+    quarter: 3,
+    btc: 0,
+    source: ""
+  },
+  {
+    type: "quarterly",
+    year: 2021,
+    quarter: 4,
+    btc: 0,
+    source: ""
+  },
 ]

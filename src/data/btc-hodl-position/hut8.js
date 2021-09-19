@@ -83,4 +83,61 @@ export default [
     btc: 0,
     source: ""
   },
+  /* Quarterly */
+  {
+    type: "quarterly",
+    year: 2020,
+    quarter: 1,
+    btc: 0,
+    source: ""
+  },
+  {
+    type: "quarterly",
+    year: 2020,
+    quarter: 2,
+    btc: 0,
+    source: ""
+  },
+  {
+    type: "quarterly",
+    year: 2020,
+    quarter: 3,
+    btc: 0,
+    source: ""
+  },
+  {
+    type: "quarterly",
+    year: 2020,
+    quarter: 4,
+    btc: 0,
+    source: ""
+  },
+  {
+    type: "quarterly",
+    year: 2021,
+    quarter: 1,
+    btc: 3271,
+    source: "https://hut8mining.com/2021/05/13/hut-8-achieves-record-level-revenue-results-in-q1-2021-balance-sheet-grows-134-over-fiscal-2020/"
+  },
+  {
+    type: "quarterly",
+    year: 2021,
+    quarter: 2,
+    btc: 3824,
+    source: "https://hut8mining.com/2021/08/12/hut-8-achieves-second-consecutive-record-level-quarterly-revenue-in-q2-2021/"
+  },
+  {
+    type: "quarterly",
+    year: 2021,
+    quarter: 3,
+    btc: 0,
+    source: ""
+  },
+  {
+    type: "quarterly",
+    year: 2021,
+    quarter: 4,
+    btc: 0,
+    source: ""
+  },
 ]
