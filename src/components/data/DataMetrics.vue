@@ -33,7 +33,7 @@ export default {
 .metrics dt {
   font-weight: bold;
 }
-.metrics dd {
+.metrics dd:not(:last-of-type) {
   margin-bottom: 1rem;
 }
 .metrics dd.capitalize {
