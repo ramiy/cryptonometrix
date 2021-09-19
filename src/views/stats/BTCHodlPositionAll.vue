@@ -1,11 +1,11 @@
 <template>
   <h1>BTC HODL Position</h1>
 
-  <Card heading="Monthly BTC HODL Position Chart">
+  <Card heading="BTC HODL Position Chart">
     <DataComparisonChart
       id="btc-hodl-position-all"
       link="btc-hodl-position"
-      :labels="['Month', 'BTC HODL Position']"
+      :labels="['Period', 'BTC HODL Position']"
       :data="itemsForDisplay"
       :maxVal="maxVal"
     ></DataComparisonChart>

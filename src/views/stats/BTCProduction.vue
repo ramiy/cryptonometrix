@@ -1,10 +1,10 @@
 <template>
   <h1>{{ company.label }}: BTC Production</h1>
 
-  <Card heading="Monthly BTC Production Chart">
+  <Card heading="BTC Production Chart">
     <DataChart
       :id="`btc-production-${route}`"
-      :labels="['Month', 'BTC Production']"
+      :labels="['Period', 'BTC Production']"
       :data="itemsForDisplay"
       :maxVal="maxVal"
     ></DataChart>
@@ -13,7 +13,7 @@
   <Card heading="Production Data">
     <DataTable
       :id="`btc-production-${route}`"
-      :labels="['Company', 'Month', 'Produced BTC', 'Notes']"
+      :labels="['Company', 'Period', 'Produced BTC', 'Notes']"
       :data="itemsForDisplay"
     ></DataTable>
   </Card>

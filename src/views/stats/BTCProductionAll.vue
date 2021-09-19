@@ -1,11 +1,11 @@
 <template>
   <h1>BTC Production</h1>
 
-  <Card heading="Monthly BTC Production Chart">
+  <Card heading="BTC Production Chart">
     <DataComparisonChart
       id="btc-production-all"
       link="btc-production"
-      :labels="['Month', 'BTC Production']"
+      :labels="['Period', 'BTC Production']"
       :data="itemsForDisplay"
       :maxVal="maxVal"
     ></DataComparisonChart>
