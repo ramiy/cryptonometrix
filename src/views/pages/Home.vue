@@ -2,7 +2,11 @@
   <h1><strong>Crypto</strong>nometrix</h1>
 
   <Card heading="Welcome">
-    <img src="/assets/img/hero.png" alt="Cryptonometrix hero image" loading="eager" />
+    <img
+      src="/assets/img/hero.png"
+      alt="Cryptonometrix hero image"
+      loading="eager"
+    />
     <p>
       The capital market contains many blockchain-related stocks. These stocks
       allow investors to be exposed to the crypto industry without purchasing
@@ -24,7 +28,11 @@
     <div class="stocks-logos">
       <div v-for="stock in stocks" :key="`home-stocks-logos-${stock.id}`">
         <router-link :to="`/company/${stock.id}`">
-          <img :src="`/assets/img/logos/${stock.img}`" :alt="stock.name" loading="lazy" /><br />
+          <img
+            :src="`/assets/img/logos/${stock.img}`"
+            :alt="stock.name"
+            loading="lazy"
+          /><br />
           <span>{{ stock.label }}</span>
         </router-link>
       </div>

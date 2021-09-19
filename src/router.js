@@ -1,12 +1,12 @@
 import { createWebHistory, createRouter } from 'vue-router'
-import Home from '@/views/Home.vue'
-import About from '@/views/About.vue'
+import Home from '@/views/pages/Home.vue'
+import About from '@/views/pages/About.vue'
+import NotFound from '@/views/pages/NotFound.vue'
 import BTCProduction from '@/views/stats/BTCProduction.vue'
 import BTCProductionAll from '@/views/stats/BTCProductionAll.vue'
 import BTCHodlPosition from '@/views/stats/BTCHodlPosition.vue'
 import BTCHodlPositionAll from '@/views/stats/BTCHodlPositionAll.vue'
 import Company from '@/views/stats/Company.vue'
-import NotFound from '@/views/NotFound.vue'
 
 const routes = [
   {
