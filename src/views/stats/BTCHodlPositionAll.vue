@@ -17,7 +17,11 @@
       info="The number of bitcoins each company held on its balance sheet."
       :metrics="[
         { name: 'Asset', description: 'Bitcoin' },
-        { name: 'Resolution', description: 'Monthly' },
+        {
+          name: 'Resolution',
+          description: filterResolution.value,
+          class: 'capitalize',
+        },
       ]"
     >
     </DataMetrics>
@@ -37,6 +41,7 @@ export default {
     DataComparisonChart,
     DataMetrics,
   },
+  inject: ["filterResolution", "filterYear"],
   data() {
     return {
       items: [],
@@ -44,7 +49,16 @@ export default {
     };
   },
   created() {
-    this.items = btcHodlPosition;
+    this.items = btcHodlPosition.map((item) => {
+      return {
+        name: item.name,
+        stats: item.stats.filter(
+          (stats) =>
+            stats.type === this.filterResolution.value &&
+            stats.year === this.filterYear.value
+        ),
+      };
+    });
   },
 };
 </script>

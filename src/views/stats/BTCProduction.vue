@@ -25,7 +25,11 @@
       :metrics="[
         { name: 'Company', description: company.name },
         { name: 'Asset', description: 'Bitcoin' },
-        { name: 'Resolution', description: 'Monthly' },
+        {
+          name: 'Resolution',
+          description: filterResolution.value,
+          class: 'capitalize',
+        },
       ]"
     >
     </DataMetrics>
@@ -47,7 +51,7 @@ export default {
     DataTable,
     DataMetrics,
   },
-  inject: ["stocks"],
+  inject: ["stocks", "filterResolution", "filterYear"],
   data() {
     return {
       items: [],
@@ -61,12 +65,18 @@ export default {
       return this.stocks.find((stock) => stock.id === this.route);
     },
     itemsForDisplay() {
-      return this.items.map((item) => ({
-        company: this.company.label,
-        label: `${item.month}/${item.year}`,
-        btc: item.btc,
-        source: item.source,
-      }));
+      return this.items
+        .filter(
+          (item) =>
+            item.type === this.filterResolution.value &&
+            item.year === this.filterYear.value
+        )
+        .map((item) => ({
+          company: this.company.label,
+          label: this.label(item),
+          btc: item.btc,
+          source: item.source,
+        }));
     },
     maxVal() {
       return Math.max.apply(
@@ -76,6 +86,15 @@ export default {
     },
   },
   methods: {
+    label(item) {
+      let label = "";
+      if (this.filterResolution.value === "monthly") {
+        label = `${item.month}/${item.year}`;
+      } else if (this.filterResolution.value === "quarterly") {
+        label = `Q${item.quarter} / ${item.year}`;
+      }
+      return label;
+    },
     updateData() {
       const hasCompany = this.route ? true : false;
       const validCompany = this.stocks.some((stock) => stock.id === this.route);

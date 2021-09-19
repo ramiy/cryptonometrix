@@ -27,7 +27,11 @@
         { name: 'Company', description: company.name },
         { name: 'Website', description: company.website },
         { name: 'Asset', description: 'Bitcoin' },
-        { name: 'Resolution', description: 'Monthly' },
+        {
+          name: 'Resolution',
+          description: filterResolution.value,
+          class: 'capitalize',
+        },
       ]"
     >
     </DataMetrics>
@@ -48,7 +52,7 @@ export default {
     DataChart,
     DataMetrics,
   },
-  inject: ["stocks"],
+  inject: ["stocks", "filterYear", "filterResolution"],
   data() {
     return {
       itemsProduction: [],
@@ -65,17 +69,15 @@ export default {
     productionItemsForDisplay() {
       return this.itemsProduction.map((item) => ({
         company: this.company.label,
-        label: `${item.month}/${item.year}`,
+        label: this.label(item),
         btc: item.btc,
-        source: item.source,
       }));
     },
     hodlPositionItemsForDisplay() {
       return this.itemsHodlPosition.map((item) => ({
         company: this.company.label,
-        label: `${item.month}/${item.year}`,
+        label: this.label(item),
         btc: item.btc,
-        source: item.source,
       }));
     },
     maxValProduction() {
@@ -92,22 +94,39 @@ export default {
     },
   },
   methods: {
+    label(item) {
+      let label = "";
+      if (this.filterResolution.value === "monthly") {
+        label = `${item.month}/${item.year}`;
+      } else if (this.filterResolution.value === "quarterly") {
+        label = `Q${item.quarter} / ${item.year}`;
+      }
+      return label;
+    },
     updateProductionData() {
       const hasCompany = this.route ? true : false;
       const validCompany = this.stocks.some((stock) => stock.id === this.route);
       if (hasCompany && validCompany) {
-        this.itemsProduction = btcProduction.find(
-          (item) => item.name === this.route
-        ).stats;
+        this.itemsProduction = btcProduction
+          .find((item) => item.name === this.route)
+          .stats.filter(
+            (item) =>
+              item.type === this.filterResolution.value &&
+              item.year === this.filterYear.value
+          );
       }
     },
     updateHodlPositionData() {
       const hasCompany = this.route ? true : false;
       const validCompany = this.stocks.some((stock) => stock.id === this.route);
       if (hasCompany && validCompany) {
-        this.itemsHodlPosition = btcHodlPosition.find(
-          (item) => item.name === this.route
-        ).stats;
+        this.itemsHodlPosition = btcHodlPosition
+          .find((item) => item.name === this.route)
+          .stats.filter(
+            (item) =>
+              item.type === this.filterResolution.value &&
+              item.year === this.filterYear.value
+          );
       }
     },
   },

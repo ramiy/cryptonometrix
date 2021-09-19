@@ -24,7 +24,12 @@
           :style="'--size: calc(' + stock.btc + ' / ' + maxVal + ')'"
         >
           <span class="tooltip" v-if="stock.btc > 0">
-            <strong> {{ stock.month }}/{{ stock.year }}: </strong>
+            <strong v-if="filterResolution === 'monthly'">
+              {{ stock.month }}/{{ stock.year }}:
+            </strong>
+            <strong v-if="filterResolution === 'quarterly'">
+              Q{{ stock.quarter }} / {{ stock.year }}:
+            </strong>
             {{ stock.btc.toLocaleString("en-US") }} BTC
           </span>
         </td>
@@ -36,6 +41,7 @@
 <script>
 export default {
   name: "DataComparisonChart",
+  inject: ["filterResolution"],
   props: {
     id: String,
     labels: Array,

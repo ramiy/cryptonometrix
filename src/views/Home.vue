@@ -33,6 +33,7 @@
 </template>
 
 <script>
+import { inject } from "vue";
 import Card from "@/components/Card.vue";
 
 export default {
@@ -40,7 +41,13 @@ export default {
   components: {
     Card,
   },
-  inject: ["stocks"],
+  setup() {
+    const stocks = inject("stocks", []);
+
+    return {
+      stocks,
+    };
+  },
 };
 </script>
 

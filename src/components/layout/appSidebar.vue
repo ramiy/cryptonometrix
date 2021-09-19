@@ -1,5 +1,30 @@
 <template>
   <aside>
+    <div class="settings">
+      <div>
+        <label for="filter-year">Year</label>
+        <select
+          id="filter-resolution"
+          :value="filterYear.value"
+          @input="updateYear($event.target.value)"
+        >
+          <option :value="2020">2020</option>
+          <option :value="2021">2021</option>
+        </select>
+      </div>
+      <div>
+        <label for="filter-resolution">Resolution</label>
+        <select
+          id="filter-resolution"
+          :value="filterResolution.value"
+          @input="updateResolution($event.target.value)"
+        >
+          <option value="monthly">Monthly</option>
+          <option value="quarterly">Quarterly</option>
+        </select>
+      </div>
+    </div>
+
     <ul>
       <li v-for="(item, index) in sidebar" :key="`sidebar-${index}`">
         <div>
@@ -29,7 +54,13 @@ import sidebar from "@/data/sidebar.js";
 
 export default {
   name: "appSidebar",
-  inject: ["stocks"],
+  inject: [
+    "stocks",
+    "filterYear",
+    "filterResolution",
+    "updateYear",
+    "updateResolution",
+  ],
   data() {
     return {
       sidebar: sidebar,
@@ -48,11 +79,29 @@ aside {
   top: 0;
   bottom: 0;
 
-  padding: calc(var(--gap) * 0.33);
   border-right: 1px solid #ddd;
   background-color: #fff;
   overflow: auto;
   user-select: none;
+}
+aside .settings {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  padding: calc(var(--gap) * 0.75);
+  border-bottom: 1px solid #eee;
+}
+aside .settings > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+aside label {
+  font-weight: bold;
+}
+aside select {
+  width: 60%;
 }
 aside ul {
   list-style: none;
@@ -65,11 +114,14 @@ aside ul {
 
   line-height: 1.5;
 }
+aside > ul {
+  padding: calc(var(--gap) * 0.75);
+}
 aside ul > li > div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 15px;
+  padding: 0 0 10px;
   border-radius: 5px;
   transition-duration: 0.3s;
 }
@@ -94,9 +146,7 @@ aside ul > li a {
   display: block;
 }
 aside ul ul {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  margin-left: 1rem;
+  margin-bottom: 1rem;
   padding-left: 1rem;
   border-left: 1px solid #ddd;
 }

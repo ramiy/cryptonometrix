@@ -7,6 +7,8 @@
 </template>
 
 <script>
+import { provide, ref } from "vue";
+
 import appNav from "@/components/layout/appNav.vue";
 import appView from "@/components/layout/appView.vue";
 import appSidebar from "@/components/layout/appSidebar.vue";
@@ -21,8 +23,21 @@ export default {
     appSidebar,
     appContent,
   },
-  provide: {
-    stocks: stocks,
+  setup() {
+    const filterYear = ref(2021);
+    const filterResolution = ref("monthly");
+    const updateYear = (year) => {
+      filterYear.value = Number(year);
+    };
+    const updateResolution = (resolution) => {
+      filterResolution.value = resolution;
+    };
+
+    provide("stocks", stocks);
+    provide("filterYear", filterYear);
+    provide("filterResolution", filterResolution);
+    provide("updateYear", updateYear);
+    provide("updateResolution", updateResolution);
   },
 };
 </script>
