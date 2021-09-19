@@ -6,7 +6,7 @@
       id="btc-production-all"
       link="btc-production"
       :labels="['Month', 'BTC Production']"
-      :data="items"
+      :data="itemsForDisplay"
       :maxVal="maxVal"
     ></DataComparisonChart>
   </Card>
@@ -45,20 +45,33 @@ export default {
   data() {
     return {
       items: [],
-      maxVal: 500,
     };
   },
+  computed: {
+    itemsForDisplay() {
+      return this.items.map((item) => {
+        return {
+          name: item.name,
+          stats: item.stats.filter(
+            (stat) =>
+              stat.type === this.filterResolution.value &&
+              stat.year === this.filterYear.value
+          ),
+        };
+      });
+    },
+    maxVal() {
+      let maxValue = 0;
+      if (this.filterResolution.value === "monthly") {
+        maxValue = 500;
+      } else if (this.filterResolution.value === "quarterly") {
+        maxValue = 1100;
+      }
+      return maxValue;
+    },
+  },
   created() {
-    this.items = btcProduction.map((item) => {
-      return {
-        name: item.name,
-        stats: item.stats.filter(
-          (stats) =>
-            stats.type === this.filterResolution.value &&
-            stats.year === this.filterYear.value
-        ),
-      };
-    });
+    this.items = btcProduction;
   },
 };
 </script>
