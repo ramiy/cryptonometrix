@@ -52,7 +52,7 @@ export default {
     DataChart,
     DataMetrics,
   },
-  inject: ["stocks", "filterYear", "filterResolution"],
+  inject: ["stocks", "filterResolution"],
   data() {
     return {
       itemsProduction: [],
