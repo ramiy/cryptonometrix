@@ -24,12 +24,7 @@
           :style="'--size: calc(' + stock.btc + ' / ' + maxVal + ')'"
         >
           <span class="tooltip" v-if="stock.btc > 0">
-            <strong v-if="filterResolution === 'monthly'">
-              {{ stock.month }}/{{ stock.year }}:
-            </strong>
-            <strong v-if="filterResolution === 'quarterly'">
-              Q{{ stock.quarter }} / {{ stock.year }}:
-            </strong>
+            <strong> {{ label(stock) }} </strong> <br />
             {{ stock.btc.toLocaleString("en-US") }} BTC
           </span>
         </td>
@@ -54,6 +49,17 @@ export default {
       chartsCssClasses:
         "charts-css column multiple data-spacing-3 datasets-spacing-1 show-labels show-primary-axis show-5-secondary-axes show-data-axes",
     };
+  },
+  methods: {
+    label(item) {
+      let label = "";
+      if (this.filterResolution.value === "monthly") {
+        label = `${item.month}/${item.year}`;
+      } else if (this.filterResolution.value === "quarterly") {
+        label = `Q${item.quarter} / ${item.year}`;
+      }
+      return label;
+    },
   },
 };
 </script>
