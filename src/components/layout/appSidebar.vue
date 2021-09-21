@@ -2,17 +2,6 @@
   <aside>
     <div class="settings">
       <div>
-        <label for="filter-year">Year</label>
-        <select
-          id="filter-resolution"
-          :value="filterYear.value"
-          @input="updateYear($event.target.value)"
-        >
-          <option :value="2020">2020</option>
-          <option :value="2021">2021</option>
-        </select>
-      </div>
-      <div>
         <label for="filter-resolution">Resolution</label>
         <select
           id="filter-resolution"
@@ -56,9 +45,7 @@ export default {
   name: "appSidebar",
   inject: [
     "stocks",
-    "filterYear",
     "filterResolution",
-    "updateYear",
     "updateResolution",
   ],
   data() {

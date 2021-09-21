@@ -109,11 +109,7 @@ export default {
       if (hasCompany && validCompany) {
         this.itemsProduction = btcProduction
           .find((item) => item.name === this.route)
-          .stats.filter(
-            (item) =>
-              item.type === this.filterResolution.value &&
-              item.year === this.filterYear.value
-          );
+          .stats.filter((item) => item.type === this.filterResolution.value);
       }
     },
     updateHodlPositionData() {
@@ -122,11 +118,7 @@ export default {
       if (hasCompany && validCompany) {
         this.itemsHodlPosition = btcHodlPosition
           .find((item) => item.name === this.route)
-          .stats.filter(
-            (item) =>
-              item.type === this.filterResolution.value &&
-              item.year === this.filterYear.value
-          );
+          .stats.filter((item) => item.type === this.filterResolution.value);
       }
     },
   },

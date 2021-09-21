@@ -41,7 +41,7 @@ export default {
     DataComparisonChart,
     DataMetrics,
   },
-  inject: ["filterResolution", "filterYear"],
+  inject: ["filterResolution"],
   data() {
     return {
       items: [],
@@ -53,9 +53,7 @@ export default {
         return {
           name: item.name,
           stats: item.stats.filter(
-            (stat) =>
-              stat.type === this.filterResolution.value &&
-              stat.year === this.filterYear.value
+            (stat) => stat.type === this.filterResolution.value
           ),
         };
       });

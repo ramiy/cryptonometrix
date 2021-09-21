@@ -24,19 +24,13 @@ export default {
     appContent,
   },
   setup() {
-    const filterYear = ref(2021);
     const filterResolution = ref("monthly");
-    const updateYear = (year) => {
-      filterYear.value = Number(year);
-    };
     const updateResolution = (resolution) => {
       filterResolution.value = resolution;
     };
 
     provide("stocks", stocks);
-    provide("filterYear", filterYear);
     provide("filterResolution", filterResolution);
-    provide("updateYear", updateYear);
     provide("updateResolution", updateResolution);
   },
 };

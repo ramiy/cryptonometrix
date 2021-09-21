@@ -51,7 +51,7 @@ export default {
     DataTable,
     DataMetrics,
   },
-  inject: ["stocks", "filterResolution", "filterYear"],
+  inject: ["stocks", "filterResolution"],
   data() {
     return {
       items: [],
@@ -66,11 +66,7 @@ export default {
     },
     itemsForDisplay() {
       return this.items
-        .filter(
-          (item) =>
-            item.type === this.filterResolution.value &&
-            item.year === this.filterYear.value
-        )
+        .filter((item) => item.type === this.filterResolution.value)
         .map((item) => ({
           company: this.company.label,
           label: this.label(item),
