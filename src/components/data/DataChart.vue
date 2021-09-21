@@ -14,9 +14,9 @@
       <tr v-for="(item, index) in data" :key="`${id}-chart-data-${index}`">
         <th>{{ item.label }}</th>
         <td :style="'--size: calc(' + item.btc + ' / ' + maxVal + ')'">
-          <span class="data" v-if="item.btc > 0">{{
-            item.btc.toLocaleString("en-US")
-          }}</span>
+          <span class="data" v-if="item.btc > 0">
+            {{ item.btc.toLocaleString("en-US") }}
+          </span>
         </td>
       </tr>
     </tbody>
