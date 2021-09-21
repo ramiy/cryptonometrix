@@ -25,21 +25,21 @@ export default [
     year: 2021,
     month: 4,
     btc: 64,
-    source: ""
+    source: "https://www.hiveblockchain.com/news/hive-blockchain-achieves-1-exahash-in-bitcoin-mining/"
   },
   {
     type: "monthly",
     year: 2021,
     month: 5,
     btc: 73,
-    source: ""
+    source: "https://www.hiveblockchain.com/news/hive-blockchain-achieves-1-exahash-in-bitcoin-mining/"
   },
   {
     type: "monthly",
     year: 2021,
     month: 6,
     btc: 86,
-    source: ""
+    source: "https://www.hiveblockchain.com/news/hive-blockchain-achieves-1-exahash-in-bitcoin-mining/"
   },
   {
     type: "monthly",

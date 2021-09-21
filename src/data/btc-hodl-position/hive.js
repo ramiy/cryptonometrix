@@ -116,8 +116,8 @@ export default [
     type: "quarterly",
     year: 2021,
     quarter: 1,
-    btc: 764,
-    source: "https://polaris.brighterir.com/public/argo_blockchain/news/rns/story/x2jyd6w/export"
+    btc: 0,
+    source: ""
   },
   {
     type: "quarterly",
