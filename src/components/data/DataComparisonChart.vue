@@ -77,11 +77,15 @@ export default {
   padding: 5px;
 }
 .charts-css .data,
+.charts-css .tooltip,
 .charts-css tbody th {
   font-size: 0.8rem;
 }
 .charts-css tbody td {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+}
+.charts-css .tooltip {
+  line-height: 1.25;
 }
 </style>

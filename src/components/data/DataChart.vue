@@ -14,8 +14,9 @@
       <tr v-for="(item, index) in data" :key="`${id}-chart-data-${index}`">
         <th>{{ item.label }}</th>
         <td :style="'--size: calc(' + item.btc + ' / ' + maxVal + ')'">
-          <span class="data" v-if="item.btc > 0">
-            {{ item.btc.toLocaleString("en-US") }}
+          <span class="tooltip" v-if="item.btc > 0">
+            <strong> {{ item.label }} </strong> <br />
+            {{ item.btc.toLocaleString("en-US") }} BTC
           </span>
         </td>
       </tr>
@@ -35,7 +36,7 @@ export default {
   data() {
     return {
       chartsCssClasses:
-        "charts-css column data-spacing-10 show-labels show-primary-axis show-5-secondary-axes",
+        "charts-css column data-spacing-5 show-labels show-primary-axis show-5-secondary-axes",
     };
   },
 };
@@ -43,7 +44,6 @@ export default {
 
 <style scoped>
 .charts-css {
-  --color: hsl(210deg 75% 70%);
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
@@ -55,11 +55,15 @@ export default {
   padding: 5px;
 }
 .charts-css .data,
+.charts-css .tooltip,
 .charts-css tbody th {
   font-size: 0.8rem;
 }
 .charts-css tbody td {
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.charts-css .tooltip {
+  line-height: 1.25;
 }
 </style>
