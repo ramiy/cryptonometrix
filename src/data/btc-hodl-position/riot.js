@@ -59,8 +59,8 @@ export default [
     type: "monthly",
     year: 2021,
     month: 9,
-    btc: 0,
-    source: ""
+    btc: 3534,
+    source: "https://www.riotblockchain.com/news-media/press-releases/detail/116/riot-blockchain-announces-september-production-and"
   },
   {
     type: "monthly",

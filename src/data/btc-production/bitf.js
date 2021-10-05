@@ -59,8 +59,8 @@ export default [
     type: "monthly",
     year: 2021,
     month: 9,
-    btc: 0,
-    source: ""
+    btc: 305,
+    source: "https://bitfarms.com/app/uploads/2021/10/Bitfarms-Press-Release-Sep-BTC-Production-Update-FINAL-CLEAN-v5.c-Oct-1-2021.pdf"
   },
   {
     type: "monthly",
@@ -130,8 +130,8 @@ export default [
     type: "quarterly",
     year: 2021,
     quarter: 3,
-    btc: 0,
-    source: ""
+    btc: 1050,
+    source: "https://bitfarms.com/app/uploads/2021/10/Bitfarms-Press-Release-Sep-BTC-Production-Update-FINAL-CLEAN-v5.c-Oct-1-2021.pdf"
   },
   {
     type: "quarterly",

@@ -59,8 +59,8 @@ export default [
     type: "monthly",
     year: 2021,
     month: 9,
-    btc: 0,
-    source: ""
+    btc: 221,
+    source: "https://www.hiveblockchain.com/news/hive-achieves-record-quarterly-revenue-of-372-million-and-earnings-of-186-million-for-q1-f2022/"
   },
   {
     type: "monthly",

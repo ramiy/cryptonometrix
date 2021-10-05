@@ -59,8 +59,8 @@ export default [
     type: "monthly",
     year: 2021,
     month: 9,
-    btc: 0,
-    source: ""
+    btc: 264,
+    source: "https://hut8mining.com/2021/10/04/hut-8-mining-provides-production-update/"
   },
   {
     type: "monthly",

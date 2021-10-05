@@ -24,8 +24,8 @@ export default [
     type: "monthly",
     year: 2021,
     month: 4,
-    btc: 37.52,
-    source: ""
+    btc: 37.50,
+    source: "https://www.globenewswire.com/news-release/2021/05/05/2223232/0/en/Digihost-Announces-309-Bitcoins-Held-at-the-End-of-April-2021.html"
   },
   {
     type: "monthly",
@@ -59,8 +59,8 @@ export default [
     type: "monthly",
     year: 2021,
     month: 9,
-    btc: 0,
-    source: ""
+    btc: 37.67,
+    source: "https://www.globenewswire.com/en/news-release/2021/10/04/2307743/0/en/Digihost-Provides-Mining-Operation-Results-for-Q3-2021-and-Announces-a-218-Increase-in-Quarterly-Bitcoin-Production-Over-the-Previous-Years-Quarter.html"
   },
   {
     type: "monthly",
@@ -116,22 +116,22 @@ export default [
     type: "quarterly",
     year: 2021,
     quarter: 1,
-    btc: 0,
-    source: ""
+    btc: 105.26,
+    source: "https://www.globenewswire.com/news-release/2021/07/06/2258084/0/en/Digihost-Announces-215-Bitcoins-Mined-in-the-First-Half-of-2021.html"
   },
   {
     type: "quarterly",
     year: 2021,
     quarter: 2,
-    btc: 0,
-    source: ""
+    btc: 109.98,
+    source: "https://www.globenewswire.com/news-release/2021/07/06/2258084/0/en/Digihost-Announces-215-Bitcoins-Mined-in-the-First-Half-of-2021.html"
   },
   {
     type: "quarterly",
     year: 2021,
     quarter: 3,
-    btc: 0,
-    source: ""
+    btc: 133.2,
+    source: "https://www.globenewswire.com/en/news-release/2021/10/04/2307743/0/en/Digihost-Provides-Mining-Operation-Results-for-Q3-2021-and-Announces-a-218-Increase-in-Quarterly-Bitcoin-Production-Over-the-Previous-Years-Quarter.html"
   },
   {
     type: "quarterly",

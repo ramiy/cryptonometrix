@@ -59,8 +59,8 @@ export default [
     type: "monthly",
     year: 2021,
     month: 9,
-    btc: 0,
-    source: ""
+    btc: 7035,
+    source: "https://ir.marathondh.com/news-events/press-releases/detail/1259/marathon-digital-holdings-announces-bitcoin-production-and"
   },
   {
     type: "monthly",
@@ -130,8 +130,8 @@ export default [
     type: "quarterly",
     year: 2021,
     quarter: 3,
-    btc: 0,
-    source: ""
+    btc: 7035,
+    source: "https://ir.marathondh.com/news-events/press-releases/detail/1259/marathon-digital-holdings-announces-bitcoin-production-and"
   },
   {
     type: "quarterly",
