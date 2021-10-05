@@ -59,13 +59,11 @@ export default {
       });
     },
     maxVal() {
-      let maxValue = 0;
-      if (this.filterResolution.value === "monthly") {
-        maxValue = 7000;
-      } else if (this.filterResolution.value === "quarterly") {
-        maxValue = 6000;
-      }
-      return maxValue;
+      return Math.max(
+        ...btcHodlPosition.map((item) =>
+          Math.max(...item.stats.map((stats) => stats.btc))
+        )
+      );
     },
   },
   created() {

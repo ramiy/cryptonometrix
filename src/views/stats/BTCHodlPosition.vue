@@ -75,10 +75,7 @@ export default {
         }));
     },
     maxVal() {
-      return Math.max.apply(
-        Math,
-        this.items.map((item) => item.btc)
-      );
+      return Math.max(...this.itemsForDisplay.map((item) => item.btc));
     },
   },
   methods: {

@@ -59,13 +59,15 @@ export default {
       });
     },
     maxVal() {
-      let maxValue = 0;
-      if (this.filterResolution.value === "monthly") {
-        maxValue = 500;
-      } else if (this.filterResolution.value === "quarterly") {
-        maxValue = 1100;
-      }
-      return maxValue;
+      return Math.max(
+        ...btcProduction.map((item) =>
+          Math.max(
+            ...item.stats
+              .filter((stat) => stat.type === this.filterResolution.value)
+              .map((stats) => stats.btc)
+          )
+        )
+      );
     },
   },
   created() {
