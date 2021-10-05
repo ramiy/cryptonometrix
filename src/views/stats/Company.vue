@@ -81,16 +81,10 @@ export default {
       }));
     },
     maxValProduction() {
-      return Math.max.apply(
-        Math,
-        this.itemsProduction.map((item) => item.btc)
-      );
+      return Math.max(...this.itemsProduction.map((item) => item.btc));
     },
     maxValHodlPosition() {
-      return Math.max.apply(
-        Math,
-        this.itemsHodlPosition.map((item) => item.btc)
-      );
+      return Math.max(...this.itemsHodlPosition.map((item) => item.btc));
     },
   },
   methods: {
