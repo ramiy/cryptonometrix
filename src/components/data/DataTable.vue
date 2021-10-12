@@ -12,8 +12,9 @@
         <td :data-mobile-label="labels[0]">{{ item.company }}</td>
         <td :data-mobile-label="labels[1]">{{ item.label }}</td>
         <td :data-mobile-label="labels[2]">
-          <strong v-if="item.btc">
-            {{ item.btc.toLocaleString("en-US") }}
+          <strong v-if="item[unit] != 0">
+            {{ item[unit].toLocaleString("en-US") }}
+            <small>{{ measurement }}</small>
           </strong>
         </td>
         <td :data-mobile-label="labels[3]">
@@ -24,9 +25,9 @@
               'positive-change': item.change > 0,
             }"
           >
-            <template v-if="item.change < 0">▼</template>
-            <template v-if="item.change > 0">▲</template>
-            {{ item.change.toFixed(2) }}%
+            <small v-if="item.change < 0">▼</small>
+            <small v-if="item.change > 0">▲</small>
+            {{ item.change.toFixed(2) }} <small>%</small>
           </strong>
         </td>
         <td :data-mobile-label="labels[4]">
@@ -46,6 +47,8 @@ export default {
     id: String,
     labels: Array,
     data: Array,
+    measurement: String,
+    unit: String,
   },
 };
 </script>
@@ -61,6 +64,9 @@ export default {
 }
 .data-table thead {
   background-color: #f6f6f6;
+}
+.data-table small {
+  font-size: smaller;
 }
 .negative-change {
   color: #dc3545;

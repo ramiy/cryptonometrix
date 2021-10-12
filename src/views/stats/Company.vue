@@ -7,6 +7,8 @@
       :labels="['Period', 'BTC Production']"
       :data="productionItemsForDisplay"
       :maxVal="maxValProduction"
+      measurement="BTC"
+      unit="btc"
     ></DataChart>
   </Card>
 
@@ -16,6 +18,8 @@
       :labels="['Period', 'BTC HODL Position']"
       :data="hodlPositionItemsForDisplay"
       :maxVal="maxValHodlPosition"
+      measurement="BTC"
+      unit="btc"
     ></DataChart>
   </Card>
 

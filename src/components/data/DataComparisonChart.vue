@@ -21,11 +21,11 @@
         <td
           v-for="(stock, stockIndex) in item.stats"
           :key="`${id}-chart-data-${index}-${stockIndex}`"
-          :style="'--size: calc(' + stock.btc + ' / ' + maxVal + ')'"
+          :style="'--size: calc(' + stock[unit] + ' / ' + maxVal + ')'"
         >
-          <span class="tooltip" v-if="stock.btc > 0">
+          <span class="tooltip" v-if="stock[unit] > 0">
             <strong> {{ label(stock) }} </strong> <br />
-            {{ stock.btc.toLocaleString("en-US") }} BTC
+            {{ stock[unit].toLocaleString("en-US") }} {{ measurement }}
           </span>
         </td>
       </tr>
@@ -43,6 +43,8 @@ export default {
     data: Array,
     maxVal: Number,
     link: String,
+    measurement: String,
+    unit: String,
   },
   data() {
     return {

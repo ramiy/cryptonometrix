@@ -8,6 +8,8 @@
       :labels="['Period', 'Production (BTC)']"
       :data="itemsForDisplay"
       :maxVal="maxVal"
+      measurement="BTC"
+      unit="btc"
     ></DataComparisonChart>
   </Card>
 

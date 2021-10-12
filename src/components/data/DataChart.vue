@@ -13,10 +13,10 @@
     <tbody>
       <tr v-for="(item, index) in data" :key="`${id}-chart-data-${index}`">
         <th>{{ item.label }}</th>
-        <td :style="'--size: calc(' + item.btc + ' / ' + maxVal + ')'">
-          <span class="tooltip" v-if="item.btc > 0">
+        <td :style="'--size: calc(' + item[unit] + ' / ' + maxVal + ')'">
+          <span class="tooltip" v-if="item[unit] > 0">
             <strong> {{ item.label }} </strong> <br />
-            {{ item.btc.toLocaleString("en-US") }} BTC
+            {{ item[unit].toLocaleString("en-US") }} {{ measurement }}
           </span>
         </td>
       </tr>
@@ -32,6 +32,8 @@ export default {
     labels: Array,
     data: Array,
     maxVal: Number,
+    measurement: String,
+    unit: String,
   },
   data() {
     return {

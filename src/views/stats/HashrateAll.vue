@@ -8,6 +8,8 @@
       :labels="['Period', 'Hashrate (EH/s)']"
       :data="itemsForDisplay"
       :maxVal="maxVal"
+      measurement="Eh/s"
+      unit="hashrate"
     ></DataComparisonChart>
   </Card>
 

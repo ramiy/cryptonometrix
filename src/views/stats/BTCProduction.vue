@@ -7,6 +7,8 @@
       :labels="['Period', 'Production (BTC)']"
       :data="itemsForDisplay"
       :maxVal="maxVal"
+      measurement="BTC"
+      unit="btc"
     ></DataChart>
   </Card>
 
@@ -15,6 +17,8 @@
       :id="`btc-production-data-${route}`"
       :labels="['Company', 'Period', 'Production (BTC)', 'Change (%)', 'Notes']"
       :data="itemsForDisplay"
+      measurement="BTC"
+      unit="btc"
     ></DataTable>
   </Card>
 

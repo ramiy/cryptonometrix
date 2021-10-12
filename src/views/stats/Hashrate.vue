@@ -7,6 +7,8 @@
       :labels="['Period', 'Hashrate (EH/s)']"
       :data="itemsForDisplay"
       :maxVal="maxVal"
+      measurement="Eh/s"
+      unit="hashrate"
     ></DataChart>
   </Card>
 
@@ -15,6 +17,8 @@
       :id="`hashrate-data-${route}`"
       :labels="['Company', 'Period', 'Hashrate (EH/s)', 'Change (%)', 'Notes']"
       :data="itemsForDisplay"
+      measurement="Eh/s"
+      unit="hashrate"
     ></DataTable>
   </Card>
 
