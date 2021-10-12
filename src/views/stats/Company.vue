@@ -125,6 +125,13 @@ export default {
       this.updateProductionData();
       this.updateHodlPositionData();
     },
+    filterResolution: {
+      handler() {
+        this.updateProductionData();
+        this.updateHodlPositionData();
+      },
+      deep: true
+    },
   },
 };
 </script>
