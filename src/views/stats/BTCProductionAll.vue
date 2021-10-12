@@ -5,7 +5,7 @@
     <DataComparisonChart
       id="btc-production-all-chart"
       link="btc-production"
-      :labels="['Period', 'BTC Production']"
+      :labels="['Period', 'Production (BTC)']"
       :data="itemsForDisplay"
       :maxVal="maxVal"
     ></DataComparisonChart>

@@ -4,7 +4,7 @@
   <Card heading="BTC Production Chart">
     <DataChart
       :id="`btc-production-chart-${route}`"
-      :labels="['Period', 'BTC Production']"
+      :labels="['Period', 'Production (BTC)']"
       :data="itemsForDisplay"
       :maxVal="maxVal"
     ></DataChart>
@@ -13,7 +13,7 @@
   <Card heading="Production Data">
     <DataTable
       :id="`btc-production-data-${route}`"
-      :labels="['Company', 'Period', 'Produced BTC', 'Change', 'Notes']"
+      :labels="['Company', 'Period', 'Production (BTC)', 'Change (%)', 'Notes']"
       :data="itemsForDisplay"
     ></DataTable>
   </Card>

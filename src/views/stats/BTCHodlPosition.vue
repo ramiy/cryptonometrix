@@ -4,7 +4,7 @@
   <Card heading="BTC HODL Position">
     <DataChart
       :id="`btc-hodl-position-chart-${route}`"
-      :labels="['Period', 'BTC HODL Position']"
+      :labels="['Period', 'HODL Position (BTC)']"
       :data="itemsForDisplay"
       :maxVal="maxVal"
     ></DataChart>
@@ -13,7 +13,7 @@
   <Card heading="HODL Position Data">
     <DataTable
       :id="`btc-hodl-position-data-${route}`"
-      :labels="['Company', 'Period', 'HODLed BTC', 'Change', 'Notes']"
+      :labels="['Company', 'Period', 'HODL (BTC)', 'Change (%)', 'Notes']"
       :data="itemsForDisplay"
     ></DataTable>
   </Card>

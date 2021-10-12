@@ -5,7 +5,7 @@
     <DataComparisonChart
       id="btc-hodl-position-all-chart"
       link="btc-hodl-position"
-      :labels="['Period', 'BTC HODL Position']"
+      :labels="['Period', 'HODL Position (BTC)']"
       :data="itemsForDisplay"
       :maxVal="maxVal"
     ></DataComparisonChart>
