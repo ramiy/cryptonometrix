@@ -1,7 +1,7 @@
 <template>
   <h1>{{ company.label }}: BTC HODL Position</h1>
 
-  <Card heading="BTC HODL Position">
+  <Card heading="BTC HODL Position" :brand="true">
     <DataChart
       :id="`btc-hodl-position-chart-${route}`"
       :labels="['Period', 'HODL Position (BTC)']"

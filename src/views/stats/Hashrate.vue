@@ -1,7 +1,7 @@
 <template>
   <h1>{{ company.label }}: Hashrate</h1>
 
-  <Card heading="Hashrate Chart">
+  <Card heading="Hashrate Chart" :brand="true">
     <DataChart
       :id="`hashrate-chart-${route}`"
       :labels="['Period', 'Hashrate (EH/s)']"

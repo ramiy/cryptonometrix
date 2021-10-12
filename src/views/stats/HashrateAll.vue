@@ -1,7 +1,7 @@
 <template>
   <h1>Hashrate</h1>
 
-  <Card heading="Hashrate Chart">
+  <Card heading="Hashrate Chart" :brand="true">
     <DataComparisonChart
       id="hashrate-all-chart"
       link="hashrate"

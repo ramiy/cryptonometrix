@@ -1,7 +1,7 @@
 <template>
   <h1>BTC Production</h1>
 
-  <Card heading="BTC Production Chart">
+  <Card heading="BTC Production Chart" :brand="true">
     <DataComparisonChart
       id="btc-production-all-chart"
       link="btc-production"

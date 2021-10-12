@@ -1,7 +1,7 @@
 <template>
   <h1>BTC HODL Position</h1>
 
-  <Card heading="BTC HODL Position Chart">
+  <Card heading="BTC HODL Position Chart" :brand="true">
     <DataComparisonChart
       id="btc-hodl-position-all-chart"
       link="btc-hodl-position"

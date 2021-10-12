@@ -1,7 +1,7 @@
 <template>
   <h1>{{ company.label }}</h1>
 
-  <Card heading="BTC Production Chart">
+  <Card heading="BTC Production Chart" :brand="true">
     <DataChart
       :id="`btc-production-${route}`"
       :labels="['Period', 'BTC Production']"
@@ -12,7 +12,7 @@
     ></DataChart>
   </Card>
 
-  <Card heading="BTC HODL Position">
+  <Card heading="BTC HODL Position" :brand="true">
     <DataChart
       :id="`btc-hodl-position-${route}`"
       :labels="['Period', 'BTC HODL Position']"
