@@ -3,7 +3,7 @@
 
   <Card heading="BTC HODL Position">
     <DataChart
-      :id="`btc-hodl-position-${route}`"
+      :id="`btc-hodl-position-chart-${route}`"
       :labels="['Period', 'BTC HODL Position']"
       :data="itemsForDisplay"
       :maxVal="maxVal"
@@ -12,7 +12,7 @@
 
   <Card heading="HODL Position Data">
     <DataTable
-      :id="`btc-hodl-position-${route}`"
+      :id="`btc-hodl-position-data-${route}`"
       :labels="['Company', 'Period', 'HODLed BTC', 'Change', 'Notes']"
       :data="itemsForDisplay"
     ></DataTable>
@@ -20,7 +20,7 @@
 
   <Card heading="Metric Description">
     <DataMetrics
-      :id="`btc-hodl-position-${route}`"
+      :id="`btc-hodl-position-description-${route}`"
       info="The number of bitcoins the company held on its balance sheet."
       :metrics="[
         { name: 'Company', description: company.name },

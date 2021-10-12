@@ -3,7 +3,7 @@
 
   <Card heading="BTC Production Chart">
     <DataChart
-      :id="`btc-production-${route}`"
+      :id="`btc-production-chart-${route}`"
       :labels="['Period', 'BTC Production']"
       :data="itemsForDisplay"
       :maxVal="maxVal"
@@ -12,7 +12,7 @@
 
   <Card heading="Production Data">
     <DataTable
-      :id="`btc-production-${route}`"
+      :id="`btc-production-data-${route}`"
       :labels="['Company', 'Period', 'Produced BTC', 'Change', 'Notes']"
       :data="itemsForDisplay"
     ></DataTable>
@@ -20,7 +20,7 @@
 
   <Card heading="Metric Description">
     <DataMetrics
-      :id="`btc-production-${route}`"
+      :id="`btc-production-description-${route}`"
       info="The number of bitcoins the company produced."
       :metrics="[
         { name: 'Company', description: company.name },

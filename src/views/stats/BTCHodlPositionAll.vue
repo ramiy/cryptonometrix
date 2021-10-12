@@ -3,7 +3,7 @@
 
   <Card heading="BTC HODL Position Chart">
     <DataComparisonChart
-      id="btc-hodl-position-all"
+      id="btc-hodl-position-all-chart"
       link="btc-hodl-position"
       :labels="['Period', 'BTC HODL Position']"
       :data="itemsForDisplay"
@@ -13,7 +13,7 @@
 
   <Card heading="Metric Description">
     <DataMetrics
-      id="`btc-hodl-position"
+      id="btc-hodl-position-all-description"
       info="The number of bitcoins each company held on its balance sheet."
       :metrics="[
         { name: 'Asset', description: 'Bitcoin' },

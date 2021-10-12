@@ -3,7 +3,7 @@
 
   <Card heading="BTC Production Chart">
     <DataComparisonChart
-      id="btc-production-all"
+      id="btc-production-all-chart"
       link="btc-production"
       :labels="['Period', 'BTC Production']"
       :data="itemsForDisplay"
@@ -13,7 +13,7 @@
 
   <Card heading="Metric Description">
     <DataMetrics
-      id="`btc-hodl-position"
+      id="btc-production-all-description"
       info="The number of bitcoins each company produced."
       :metrics="[
         { name: 'Asset', description: 'Bitcoin' },
