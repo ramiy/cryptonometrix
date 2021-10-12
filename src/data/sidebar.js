@@ -16,7 +16,9 @@ export default [
   {
     id: "sidebar-hashrate",
     label: "Hashrate",
-    suffix: "Soon",
+    link: "/hashrate/",
+    suffix: "New",
+    stocks: true,
   },
   {
     id: "sidebar-market-cap",

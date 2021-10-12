@@ -6,6 +6,8 @@ import BTCProduction from '@/views/stats/BTCProduction.vue'
 import BTCProductionAll from '@/views/stats/BTCProductionAll.vue'
 import BTCHodlPosition from '@/views/stats/BTCHodlPosition.vue'
 import BTCHodlPositionAll from '@/views/stats/BTCHodlPositionAll.vue'
+import Hashrate from '@/views/stats/Hashrate.vue'
+import HashrateAll from '@/views/stats/HashrateAll.vue'
 import Company from '@/views/stats/Company.vue'
 
 const routes = [
@@ -38,6 +40,16 @@ const routes = [
     path: '/btc-hodl-position/',
     name: 'BTCHodlPositionAll',
     component: BTCHodlPositionAll,
+  },
+  {
+    path: '/hashrate/:company',
+    name: 'Hashrate',
+    component: Hashrate,
+  },
+  {
+    path: '/hashrate/',
+    name: 'HashrateAll',
+    component: HashrateAll,
   },
   {
     path: '/company/:company',
