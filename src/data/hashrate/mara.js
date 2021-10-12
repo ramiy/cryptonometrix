@@ -130,8 +130,8 @@ export default [
     type: "quarterly",
     year: 2021,
     quarter: 3,
-    hashrate: 0,
-    source: ""
+    hashrate: 2.7,
+    source: "https://ir.marathondh.com/news-events/press-releases/detail/1259/marathon-digital-holdings-announces-bitcoin-production-and"
   },
   {
     type: "quarterly",

@@ -59,8 +59,8 @@ export default [
     type: "monthly",
     year: 2021,
     month: 9,
-    btc: 0,
-    source: ""
+    btc: 1836,
+    source: "https://polaris.brighterir.com/public/argo_blockchain/news/rns/story/r728l7w"
   },
   {
     type: "monthly",
@@ -130,8 +130,8 @@ export default [
     type: "quarterly",
     year: 2021,
     quarter: 3,
-    btc: 0,
-    source: ""
+    btc: 1836,
+    source: "https://polaris.brighterir.com/public/argo_blockchain/news/rns/story/r728l7w"
   },
   {
     type: "quarterly",

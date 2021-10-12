@@ -116,8 +116,8 @@ export default [
     type: "quarterly",
     year: 2021,
     quarter: 1,
-    btc: 0,
-    source: ""
+    btc: 1565,
+    source: "https://www.riotblockchain.com/news-media/press-releases/detail/105/riot-blockchain-announces-march-production-and-operations"
   },
   {
     type: "quarterly",
@@ -130,8 +130,8 @@ export default [
     type: "quarterly",
     year: 2021,
     quarter: 3,
-    btc: 0,
-    source: ""
+    btc: 3534,
+    source: "https://www.riotblockchain.com/news-media/press-releases/detail/116/riot-blockchain-announces-september-production-and"
   },
   {
     type: "quarterly",

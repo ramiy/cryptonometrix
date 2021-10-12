@@ -116,8 +116,8 @@ export default [
     type: "quarterly",
     year: 2021,
     quarter: 1,
-    btc: 0,
-    source: ""
+    btc: 256.26,
+    source: "https://www.globenewswire.com/news-release/2021/04/06/2204840/0/en/Digihost-Announces-105-26-Bitcoins-Mined-in-the-First-Quarter-of-2021-and-Provides-Operations-Update.html"
   },
   {
     type: "quarterly",
