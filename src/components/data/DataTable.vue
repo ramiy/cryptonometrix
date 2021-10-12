@@ -12,11 +12,24 @@
         <td :data-mobile-label="labels[0]">{{ item.company }}</td>
         <td :data-mobile-label="labels[1]">{{ item.label }}</td>
         <td :data-mobile-label="labels[2]">
-          <template v-if="item.btc">
+          <strong v-if="item.btc">
             {{ item.btc.toLocaleString("en-US") }}
-          </template>
+          </strong>
         </td>
         <td :data-mobile-label="labels[3]">
+          <strong
+            v-if="item.change != 0"
+            :class="{
+              'negative-change': item.change < 0,
+              'positive-change': item.change > 0,
+            }"
+          >
+            <template v-if="item.change < 0">▼</template>
+            <template v-if="item.change > 0">▲</template>
+            {{ item.change.toFixed(2) }}%
+          </strong>
+        </td>
+        <td :data-mobile-label="labels[4]">
           <sub v-if="item.source">
             <a :href="item.source" target="_blank"> [source] </a>
           </sub>
@@ -48,6 +61,12 @@ export default {
 }
 .data-table thead {
   background-color: #f6f6f6;
+}
+.negative-change {
+  color: #dc3545;
+}
+.positive-change {
+  color: #28a745;
 }
 @media screen and (max-width: 768px) {
   .data-table thead {

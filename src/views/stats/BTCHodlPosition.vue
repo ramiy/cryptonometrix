@@ -13,7 +13,7 @@
   <Card heading="HODL Position Data">
     <DataTable
       :id="`btc-hodl-position-${route}`"
-      :labels="['Company', 'Period', 'Produced BTC', 'Notes']"
+      :labels="['Company', 'Period', 'HODLed BTC', 'Change', 'Notes']"
       :data="itemsForDisplay"
     ></DataTable>
   </Card>
@@ -65,14 +65,24 @@ export default {
       return this.stocks.find((stock) => stock.id === this.route);
     },
     itemsForDisplay() {
+      let change = 0;
+      let prev = 0;
       return this.items
         .filter((item) => item.type === this.filterResolution.value)
-        .map((item) => ({
-          company: this.company.label,
-          label: this.label(item),
-          btc: item.btc,
-          source: item.source,
-        }));
+        .map((item) => {
+          change =
+            prev === 0 || item.btc === 0 || isNaN(prev) || isNaN(item.btc)
+              ? 0
+              : (item.btc / prev - 1) * 100;
+          prev = item.btc;
+          return {
+            company: this.company.label,
+            label: this.label(item),
+            btc: item.btc,
+            change: parseFloat(change),
+            source: item.source,
+          };
+        });
     },
     maxVal() {
       return Math.max(...this.itemsForDisplay.map((item) => item.btc));
