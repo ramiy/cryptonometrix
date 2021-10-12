@@ -1,5 +1,12 @@
 export default [
   {
+    id: "sidebar-company",
+    label: "Companies",
+    link: "/company/",
+    suffix: "New",
+    stocks: true,
+  },
+  {
     id: "sidebar-btc-production",
     label: "BTC Production",
     link: "/btc-production/",

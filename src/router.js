@@ -9,6 +9,7 @@ import BTCHodlPositionAll from '@/views/stats/BTCHodlPositionAll.vue'
 import Hashrate from '@/views/stats/Hashrate.vue'
 import HashrateAll from '@/views/stats/HashrateAll.vue'
 import Company from '@/views/stats/Company.vue'
+import CompanyAll from '@/views/stats/CompanyAll.vue'
 
 const routes = [
   {
@@ -55,6 +56,11 @@ const routes = [
     path: '/company/:company',
     name: 'Company',
     component: Company,
+  },
+  {
+    path: '/company/',
+    name: 'CompanyAll',
+    component: CompanyAll,
   },
   {
     path: "/:catchAll(.*)",
