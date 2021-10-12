@@ -3,10 +3,12 @@
     <router-link to="/" class="logo">
       <img src="/assets/img/logo.png" alt="Cryptonometrix Logo" loading="eager" />
     </router-link>
+    <!--
     <nav>
       <router-link to="/">Home</router-link>
       <router-link to="/about">About</router-link>
     </nav>
+    -->
   </header>
 </template>
 
