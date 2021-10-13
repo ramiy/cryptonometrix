@@ -1,7 +1,7 @@
 <template>
   <h1>{{ company.label }}</h1>
 
-  <Card heading="BTC Production Chart" :brand="true">
+  <Card heading="BTC Production" :brand="true">
     <DataChart
       :id="`btc-production-${route}`"
       :labels="['Period', 'BTC Production']"
@@ -20,6 +20,17 @@
       :maxVal="maxValHodlPosition"
       measurement="BTC"
       unit="btc"
+    ></DataChart>
+  </Card>
+
+  <Card heading="Hashrate" :brand="true">
+    <DataChart
+      :id="`hashrate-${route}`"
+      :labels="['Period', 'Hashrate']"
+      :data="hashrateItemsForDisplay"
+      :maxVal="maxValHashrate"
+      measurement="EH/s"
+      unit="hashrate"
     ></DataChart>
   </Card>
 
@@ -48,6 +59,7 @@ import DataChart from "@/components/data/DataChart.vue";
 import DataMetrics from "@/components/data/DataMetrics.vue";
 import btcProduction from "@/data/btc-production.js";
 import btcHodlPosition from "@/data/btc-hodl-position.js";
+import btcHashrate from "@/data/hashrate.js";
 
 export default {
   name: "Company",
@@ -61,6 +73,7 @@ export default {
     return {
       itemsProduction: [],
       itemsHodlPosition: [],
+      itemsHashrate: [],
     };
   },
   computed: {
@@ -84,11 +97,21 @@ export default {
         btc: item.btc,
       }));
     },
+    hashrateItemsForDisplay() {
+      return this.itemsHashrate.map((item) => ({
+        company: this.company.label,
+        label: this.label(item),
+        hashrate: item.hashrate,
+      }));
+    },
     maxValProduction() {
       return Math.max(...this.itemsProduction.map((item) => item.btc));
     },
     maxValHodlPosition() {
       return Math.max(...this.itemsHodlPosition.map((item) => item.btc));
+    },
+    maxValHashrate() {
+      return Math.max(...this.itemsHashrate.map((item) => item.hashrate));
     },
   },
   methods: {
@@ -119,20 +142,32 @@ export default {
           .stats.filter((item) => item.type === this.filterResolution.value);
       }
     },
+    updateHashrateData() {
+      const hasCompany = this.route ? true : false;
+      const validCompany = this.stocks.some((stock) => stock.id === this.route);
+      if (hasCompany && validCompany) {
+        this.itemsHashrate = btcHashrate
+          .find((item) => item.name === this.route)
+          .stats.filter((item) => item.type === this.filterResolution.value);
+      }
+    },
   },
   created() {
     this.updateProductionData();
     this.updateHodlPositionData();
+    this.updateHashrateData();
   },
   watch: {
     $route() {
       this.updateProductionData();
       this.updateHodlPositionData();
+      this.updateHashrateData();
     },
     filterResolution: {
       handler() {
         this.updateProductionData();
         this.updateHodlPositionData();
+        this.updateHashrateData();
       },
       deep: true
     },
