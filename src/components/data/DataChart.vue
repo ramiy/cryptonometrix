@@ -58,6 +58,19 @@ export default {
   overflow: hidden;
   padding: 5px;
 }
+.charts-css tbody::before {    
+  content: '';
+  background-image: url(/assets/img/logo.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.1;
+}
 .charts-css .data,
 .charts-css .tooltip,
 .charts-css tbody th {

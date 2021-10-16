@@ -1,0 +1,47 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 496.07 420.76">
+    <defs>
+        <style>
+            .cls-1,
+            .cls-2,
+            .cls-3 {
+                isolation: isolate;
+            }
+
+            .cls-1 {
+                fill: url(#New_Gradient_Swatch_copy_2);
+            }
+
+            .cls-2 {
+                fill: url(#New_Gradient_Swatch_copy_2-2);
+            }
+
+            .cls-3 {
+                fill: url(#New_Gradient_Swatch_copy_2-3);
+            }
+        </style>
+        <linearGradient id="New_Gradient_Swatch_copy_2" x1="252.85" y1="124.36" x2="203.19" y2="222.33"
+            gradientUnits="userSpaceOnUse">
+            <stop offset="0.12" stop-color="#11eee4" />
+            <stop offset="0.12" stop-color="#11ede4" />
+            <stop offset="0.24" stop-color="#1cbbe1" />
+            <stop offset="0.35" stop-color="#2496df" />
+            <stop offset="0.44" stop-color="#2880dd" />
+            <stop offset="0.5" stop-color="#2a78dd" />
+            <stop offset="0.6" stop-color="#2398df" />
+            <stop offset="0.84" stop-color="#11ebe4" />
+            <stop offset="0.86" stop-color="#0ff2e4" />
+        </linearGradient>
+        <linearGradient id="New_Gradient_Swatch_copy_2-2" x1="267.72" y1="104.75" x2="77.78" y2="479.49"
+            xlink:href="#New_Gradient_Swatch_copy_2" />
+        <linearGradient id="New_Gradient_Swatch_copy_2-3" x1="418.91" y1="98.34" x2="261.12" y2="409.63"
+            xlink:href="#New_Gradient_Swatch_copy_2" />
+    </defs>
+    <title>CryptonometricsLogo</title>
+    <path class="cls-2"
+        d="M331.38,180.69,300.6,162.92l-76.68-44.26-24.74-14.29a38.33,38.33,0,0,0-38.34,0L28.64,180.69a38.34,38.34,0,0,0-19.17,33.2V366.54a38.34,38.34,0,0,0,19.17,33.21l132.2,76.33a38.38,38.38,0,0,0,38.34,0L291.09,423l-76.68-44.26L180,398.6,86.15,344.41V236l78.31-45.22,15.55-9,61.13,35.3L273.87,236v88.49L335,359.83l15.55-9v-137A38.34,38.34,0,0,0,331.38,180.69Z"
+        transform="translate(-9.47 -60.45)" />
+    <path class="cls-3"
+        d="M505.54,175.11V327.77A38.37,38.37,0,0,1,486.37,361L354.17,437.3a38.38,38.38,0,0,1-38.34,0L291.09,423l-76.68-44.26L183.63,361a38.37,38.37,0,0,1-19.17-33.21V190.82l15.55-9,61.13,35.3v88.49l32.73,18.9L335,359.83l15.55-9,78.31-45.22V197.26L335,143.07l-34.4,19.85-76.68-44.26,91.91-53.07a38.33,38.33,0,0,1,38.34,0l132.2,76.33A38.32,38.32,0,0,1,505.54,175.11Z"
+        transform="translate(-9.47 -60.45)" />
+</svg>
