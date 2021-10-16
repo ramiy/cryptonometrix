@@ -21,7 +21,7 @@
         { name: 'Asset', description: 'Bitcoin' },
         {
           name: 'Resolution',
-          description: filterResolution.value,
+          description: filterResolution,
           class: 'capitalize',
         },
       ]"
@@ -31,6 +31,7 @@
 </template>
 
 <script>
+import { inject, computed } from "vue";
 import Card from "@/components/Card.vue";
 import DataComparisonChart from "@/components/data/DataComparisonChart.vue";
 import DataMetrics from "@/components/data/DataMetrics.vue";
@@ -43,33 +44,35 @@ export default {
     DataComparisonChart,
     DataMetrics,
   },
-  inject: ["filterResolution"],
-  data() {
-    return {
-      items: [],
-    };
-  },
-  computed: {
-    itemsForDisplay() {
-      return this.items.map((item) => {
+  setup() {
+    const filterResolution = inject("filterResolution", []);
+    let itemsForDisplay = computed(() => {
+      return btcHodlPosition.map((item) => {
         return {
           name: item.name,
           stats: item.stats.filter(
-            (stat) => stat.type === this.filterResolution.value
+            (stat) => stat.type === filterResolution.value
           ),
         };
       });
-    },
-    maxVal() {
+    });
+    let maxVal = computed(() => {
       return Math.max(
         ...btcHodlPosition.map((item) =>
-          Math.max(...item.stats.map((stats) => stats.btc))
+          Math.max(
+            ...item.stats
+              .filter((stat) => stat.type === filterResolution.value)
+              .map((stats) => stats.btc)
+          )
         )
       );
-    },
-  },
-  created() {
-    this.items = btcHodlPosition;
+    });
+
+    return {
+      filterResolution,
+      itemsForDisplay,
+      maxVal,
+    };
   },
 };
 </script>
