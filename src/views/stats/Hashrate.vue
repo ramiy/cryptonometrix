@@ -35,7 +35,7 @@
         { name: 'Asset', description: 'Bitcoin' },
         {
           name: 'Resolution',
-          description: filterResolution.value,
+          description: filterResolution,
           class: 'capitalize',
         },
       ]"
@@ -45,6 +45,9 @@
 </template>
 
 <script>
+import { inject, reactive, computed, watch } from "vue";
+import { useRoute } from "vue-router";
+import { chartLabel } from "@/utils";
 import Card from "@/components/Card.vue";
 import DataChart from "@/components/data/DataChart.vue";
 import DataTable from "@/components/data/DataTable.vue";
@@ -59,71 +62,61 @@ export default {
     DataTable,
     DataMetrics,
   },
-  inject: ["stocks", "filterResolution"],
-  data() {
-    return {
-      items: [],
+  setup() {
+    const stocks = inject("stocks", []);
+    const filterResolution = inject("filterResolution", []);
+
+    const router = useRoute();
+    const route = computed(() => router.params.company);
+
+    const company = computed(() =>
+      stocks.find((stock) => stock.id === route.value)
+    );
+
+    let items = reactive([]);
+
+    const updateData = () => {
+      const hasCompany = route.value ? true : false;
+      const validCompany = stocks.some((stock) => stock.id === route.value);
+      if (hasCompany && validCompany) {
+        items = Hashrate.find((item) => item.name === route.value).stats;
+      }
     };
-  },
-  computed: {
-    route() {
-      return this.$route.params.company;
-    },
-    company() {
-      return this.stocks.find((stock) => stock.id === this.route);
-    },
-    itemsForDisplay() {
+    updateData();
+    watch(route, () => updateData());
+
+    const itemsForDisplay = computed(() => {
       let change = 0;
       let prev = 0;
-      return this.items
-        .filter((item) => item.type === this.filterResolution.value)
+      return items
+        .filter((item) => item.type === filterResolution.value)
         .map((item) => {
           change =
-            prev === 0 ||
-            item.hashrate === 0 ||
-            isNaN(prev) ||
-            isNaN(item.hashrate)
+            prev === 0 || item.hashrate === 0 || isNaN(prev) || isNaN(item.hashrate)
               ? 0
               : (item.hashrate / prev - 1) * 100;
           prev = item.hashrate;
           return {
-            company: this.company.label,
-            label: this.label(item),
+            company: company.value.label,
+            label: chartLabel(item, filterResolution),
             hashrate: item.hashrate,
             change: parseFloat(change),
             source: item.source,
           };
         });
-    },
-    maxVal() {
-      return Math.max(...this.itemsForDisplay.map((item) => item.hashrate));
-    },
-  },
-  methods: {
-    label(item) {
-      let label = "";
-      if (this.filterResolution.value === "monthly") {
-        label = `${item.month}/${item.year}`;
-      } else if (this.filterResolution.value === "quarterly") {
-        label = `Q${item.quarter} / ${item.year}`;
-      }
-      return label;
-    },
-    updateData() {
-      const hasCompany = this.route ? true : false;
-      const validCompany = this.stocks.some((stock) => stock.id === this.route);
-      if (hasCompany && validCompany) {
-        this.items = Hashrate.find((item) => item.name === this.route).stats;
-      }
-    },
-  },
-  created() {
-    this.updateData();
-  },
-  watch: {
-    $route() {
-      this.updateData();
-    },
+    });
+
+    const maxVal = computed(() =>
+      Math.max(...itemsForDisplay.value.map((item) => item.hashrate))
+    );
+
+    return {
+      filterResolution,
+      route,
+      company,
+      itemsForDisplay,
+      maxVal,
+    };
   },
 };
 </script>
