@@ -9,7 +9,11 @@
     </thead>
     <tbody>
       <tr v-for="(item, index) in data" :key="`${id}-data-${index}`">
-        <td :data-mobile-label="labels[0]">{{ item.company }}</td>
+        <td :data-mobile-label="labels[0]">
+          <router-link :to="`/company/${route}`">
+            {{ item.company }}
+          </router-link>
+        </td>
         <td :data-mobile-label="labels[1]">{{ item.label }}</td>
         <td :data-mobile-label="labels[2]">
           <strong v-if="item[unit] != 0">
@@ -47,6 +51,7 @@ export default {
     id: String,
     labels: Array,
     data: Array,
+    route: String,
     measurement: String,
     unit: String,
   },

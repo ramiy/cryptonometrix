@@ -1,5 +1,8 @@
 <template>
-  <h1>{{ company.label }}: BTC HODL Position</h1>
+  <h1>
+    <router-link :to="`/company/${route}`">{{ company.label }}:</router-link>
+    BTC HODL Position
+  </h1>
 
   <Card heading="BTC HODL Position" :brand="true">
     <DataChart
@@ -17,6 +20,7 @@
       :id="`btc-hodl-position-data-${route}`"
       :labels="['Company', 'Period', 'HODL (BTC)', 'Change (%)', 'Notes']"
       :data="itemsForDisplay"
+      :route="route"
       measurement="BTC"
       unit="btc"
     ></DataTable>

@@ -1,5 +1,8 @@
 <template>
-  <h1>{{ company.label }}: Hashrate</h1>
+  <h1>
+    <router-link :to="`/company/${route}`">{{ company.label }}:</router-link>
+    Hashrate
+  </h1>
 
   <Card heading="Hashrate Chart" :brand="true">
     <DataChart
@@ -17,6 +20,7 @@
       :id="`hashrate-data-${route}`"
       :labels="['Company', 'Period', 'Hashrate (EH/s)', 'Change (%)', 'Notes']"
       :data="itemsForDisplay"
+      :route="route"
       measurement="Eh/s"
       unit="hashrate"
     ></DataTable>
@@ -75,7 +79,10 @@ export default {
         .filter((item) => item.type === this.filterResolution.value)
         .map((item) => {
           change =
-            prev === 0 || item.hashrate === 0 || isNaN(prev) || isNaN(item.hashrate)
+            prev === 0 ||
+            item.hashrate === 0 ||
+            isNaN(prev) ||
+            isNaN(item.hashrate)
               ? 0
               : (item.hashrate / prev - 1) * 100;
           prev = item.hashrate;
@@ -106,9 +113,7 @@ export default {
       const hasCompany = this.route ? true : false;
       const validCompany = this.stocks.some((stock) => stock.id === this.route);
       if (hasCompany && validCompany) {
-        this.items = Hashrate.find(
-          (item) => item.name === this.route
-        ).stats;
+        this.items = Hashrate.find((item) => item.name === this.route).stats;
       }
     },
   },

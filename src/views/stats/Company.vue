@@ -10,6 +10,8 @@
       measurement="BTC"
       unit="btc"
     ></DataChart>
+    <br>
+    <p><router-link :to="`/btc-production/${route}`">See the full BTC production report</router-link></p>
   </Card>
 
   <Card heading="BTC HODL Position" :brand="true">
@@ -21,6 +23,8 @@
       measurement="BTC"
       unit="btc"
     ></DataChart>
+    <br>
+    <p><router-link :to="`/btc-hodl-position/${route}`">See the full BTC hodl position report</router-link></p>
   </Card>
 
   <Card heading="Hashrate" :brand="true">
@@ -32,6 +36,8 @@
       measurement="EH/s"
       unit="hashrate"
     ></DataChart>
+    <br>
+    <p><router-link :to="`/hashrate/${route}`">See the full hashrate report</router-link></p>
   </Card>
 
   <Card heading="Metric Description">

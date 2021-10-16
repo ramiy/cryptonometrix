@@ -1,5 +1,8 @@
 <template>
-  <h1>{{ company.label }}: BTC Production</h1>
+  <h1>
+    <router-link :to="`/company/${route}`">{{ company.label }}:</router-link>
+    BTC Production
+  </h1>
 
   <Card heading="BTC Production Chart" :brand="true">
     <DataChart
@@ -17,6 +20,7 @@
       :id="`btc-production-data-${route}`"
       :labels="['Company', 'Period', 'Production (BTC)', 'Change (%)', 'Notes']"
       :data="itemsForDisplay"
+      :route="route"
       measurement="BTC"
       unit="btc"
     ></DataTable>
