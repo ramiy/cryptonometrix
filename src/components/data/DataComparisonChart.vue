@@ -24,7 +24,7 @@
           :style="'--size: calc(' + stock[unit] + ' / ' + maxVal + ')'"
         >
           <span class="tooltip" v-if="stock[unit] > 0">
-            <strong> {{ chartLabel(stock) }} </strong> <br />
+            <strong> {{ chartLabel(stock, filterResolution) }} </strong> <br />
             {{ stock[unit].toLocaleString("en-US") }} {{ measurement }}
           </span>
         </td>
@@ -35,6 +35,7 @@
 
 <script>
 import { inject } from "vue";
+import { chartLabel } from "@/utils";
 
 export default {
   name: "DataComparisonChart",
@@ -51,17 +52,9 @@ export default {
     const filterResolution = inject("filterResolution", []);
     const chartsCssClasses =
       "charts-css column multiple data-spacing-3 datasets-spacing-1 show-labels show-primary-axis show-5-secondary-axes show-data-axes";
-    const chartLabel = (item) => {
-      let label = "";
-      if (filterResolution.value === "monthly") {
-        label = `${item.month}/${item.year}`;
-      } else if (filterResolution.value === "quarterly") {
-        label = `Q${item.quarter} / ${item.year}`;
-      }
-      return label;
-    };
 
     return {
+      filterResolution,
       chartsCssClasses,
       chartLabel,
     };
