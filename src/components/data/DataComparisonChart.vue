@@ -24,7 +24,7 @@
           :style="'--size: calc(' + stock[unit] + ' / ' + maxVal + ')'"
         >
           <span class="tooltip" v-if="stock[unit] > 0">
-            <strong> {{ label(stock) }} </strong> <br />
+            <strong> {{ chartLabel(stock) }} </strong> <br />
             {{ stock[unit].toLocaleString("en-US") }} {{ measurement }}
           </span>
         </td>
@@ -34,9 +34,10 @@
 </template>
 
 <script>
+import { inject } from "vue";
+
 export default {
   name: "DataComparisonChart",
-  inject: ["filterResolution"],
   props: {
     id: String,
     labels: Array,
@@ -46,22 +47,24 @@ export default {
     measurement: String,
     unit: String,
   },
-  data() {
-    return {
-      chartsCssClasses:
-        "charts-css column multiple data-spacing-3 datasets-spacing-1 show-labels show-primary-axis show-5-secondary-axes show-data-axes",
-    };
-  },
-  methods: {
-    label(item) {
+  setup() {
+    const filterResolution = inject("filterResolution", []);
+    const chartsCssClasses =
+      "charts-css column multiple data-spacing-3 datasets-spacing-1 show-labels show-primary-axis show-5-secondary-axes show-data-axes";
+    const chartLabel = (item) => {
       let label = "";
-      if (this.filterResolution.value === "monthly") {
+      if (filterResolution.value === "monthly") {
         label = `${item.month}/${item.year}`;
-      } else if (this.filterResolution.value === "quarterly") {
+      } else if (filterResolution.value === "quarterly") {
         label = `Q${item.quarter} / ${item.year}`;
       }
       return label;
-    },
+    };
+
+    return {
+      chartsCssClasses,
+      chartLabel,
+    };
   },
 };
 </script>

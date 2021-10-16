@@ -5,7 +5,7 @@
         <label for="filter-resolution">Resolution</label>
         <select
           id="filter-resolution"
-          :value="filterResolution.value"
+          :value="filterResolution"
           @input="updateResolution($event.target.value)"
         >
           <option value="monthly">Monthly</option>
@@ -39,19 +39,22 @@
 </template>
 
 <script>
+import { inject } from "vue";
 import sidebar from "@/data/sidebar.js";
 
 export default {
   name: "appSidebar",
-  inject: [
-    "stocks",
-    "filterResolution",
-    "updateResolution",
-  ],
-  data() {
+  setup() {
+    const stocks = inject("stocks", []);
+    const filterResolution = inject("filterResolution", []);
+    const updateResolution = inject("updateResolution");
+
     return {
-      sidebar: sidebar,
-    };
+      stocks,
+      filterResolution,
+      updateResolution,
+      sidebar
+    }
   },
 };
 </script>

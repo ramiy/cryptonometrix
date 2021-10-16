@@ -35,10 +35,12 @@ export default {
     measurement: String,
     unit: String,
   },
-  data() {
+  setup() {
+    const chartsCssClasses =
+      "charts-css column data-spacing-5 show-labels show-primary-axis show-5-secondary-axes";
+
     return {
-      chartsCssClasses:
-        "charts-css column data-spacing-5 show-labels show-primary-axis show-5-secondary-axes",
+      chartsCssClasses,
     };
   },
 };

@@ -24,7 +24,7 @@ export default {
     appContent,
   },
   setup() {
-    const filterResolution = ref("monthly");
+    let filterResolution = ref("monthly");
     const updateResolution = (resolution) => {
       filterResolution.value = resolution;
     };
