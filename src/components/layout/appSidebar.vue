@@ -1,6 +1,6 @@
 <template>
   <aside>
-    <div class="settings">
+    <div class="filters">
       <div>
         <label for="filter-resolution">Resolution</label>
         <select
@@ -14,7 +14,7 @@
       </div>
     </div>
 
-    <ul>
+    <ul class="navigation-links">
       <li v-for="(item, index) in sidebar" :key="`sidebar-${index}`">
         <div>
           <span class="prefix" v-if="item.prefix"> {{ item.prefix }} </span>
@@ -74,7 +74,7 @@ aside {
   overflow: auto;
   user-select: none;
 }
-aside .settings {
+aside .filters {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -82,7 +82,7 @@ aside .settings {
   padding: calc(var(--gap) * 0.75);
   border-bottom: 1px solid #eee;
 }
-aside .settings > div {
+aside .filters > div {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -92,6 +92,9 @@ aside label {
 }
 aside select {
   width: 60%;
+}
+aside .navigation-links {
+  padding: calc(var(--gap) * 0.75);
 }
 aside ul {
   list-style: none;
@@ -103,9 +106,6 @@ aside ul {
   gap: 10px;
 
   line-height: 1.5;
-}
-aside > ul {
-  padding: calc(var(--gap) * 0.75);
 }
 aside ul > li > div {
   display: flex;
