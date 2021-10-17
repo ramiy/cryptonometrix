@@ -10,8 +10,12 @@
       measurement="BTC"
       unit="btc"
     ></DataChart>
-    <br>
-    <p><router-link :to="`/btc-production/${route}`">See the full BTC production report</router-link></p>
+    <br />
+    <p>
+      <router-link :to="`/btc-production/${route}`">
+        See the full BTC production report
+      </router-link>
+    </p>
   </Card>
 
   <Card heading="BTC HODL Position" :brand="true">
@@ -23,8 +27,12 @@
       measurement="BTC"
       unit="btc"
     ></DataChart>
-    <br>
-    <p><router-link :to="`/btc-hodl-position/${route}`">See the full BTC hodl position report</router-link></p>
+    <br />
+    <p>
+      <router-link :to="`/btc-hodl-position/${route}`">
+        See the full BTC hodl position report
+      </router-link>
+    </p>
   </Card>
 
   <Card heading="Hashrate" :brand="true">
@@ -36,8 +44,12 @@
       measurement="EH/s"
       unit="hashrate"
     ></DataChart>
-    <br>
-    <p><router-link :to="`/hashrate/${route}`">See the full hashrate report</router-link></p>
+    <br />
+    <p>
+      <router-link :to="`/hashrate/${route}`">
+        See the full hashrate report
+      </router-link>
+    </p>
   </Card>
 
   <Card heading="Metric Description">
@@ -50,7 +62,7 @@
         { name: 'Asset', description: 'Bitcoin' },
         {
           name: 'Resolution',
-          description: filterResolution.value,
+          description: filterResolution,
           class: 'capitalize',
         },
       ]"
@@ -60,6 +72,9 @@
 </template>
 
 <script>
+import { inject, reactive, computed, watch } from "vue";
+import { useRoute } from "vue-router";
+import { chartLabel } from "@/utils";
 import Card from "@/components/Card.vue";
 import DataChart from "@/components/data/DataChart.vue";
 import DataMetrics from "@/components/data/DataMetrics.vue";
@@ -74,109 +89,122 @@ export default {
     DataChart,
     DataMetrics,
   },
-  inject: ["stocks", "filterResolution"],
-  data() {
-    return {
-      itemsProduction: [],
-      itemsHodlPosition: [],
-      itemsHashrate: [],
+  setup() {
+    const stocks = inject("stocks", []);
+    const filterResolution = inject("filterResolution", []);
+
+    const router = useRoute();
+    const route = computed(() => router.params.company);
+
+    const company = computed(() =>
+      stocks.find((stock) => stock.id === route.value)
+    );
+
+    let itemsProduction = reactive({ data: [] });
+    const updateProductionData = () => {
+      const hasCompany = route.value ? true : false;
+      const validCompany = stocks.some((stock) => stock.id === route.value);
+      if (hasCompany && validCompany) {
+        itemsProduction.data = btcProduction
+          .find((item) => item.name === route.value)
+          .stats.filter((item) => item.type === filterResolution.value);
+      }
     };
-  },
-  computed: {
-    route() {
-      return this.$route.params.company;
-    },
-    company() {
-      return this.stocks.find((stock) => stock.id === this.route);
-    },
-    productionItemsForDisplay() {
-      return this.itemsProduction.map((item) => ({
-        company: this.company.label,
-        label: this.label(item),
-        btc: item.btc,
-      }));
-    },
-    hodlPositionItemsForDisplay() {
-      return this.itemsHodlPosition.map((item) => ({
-        company: this.company.label,
-        label: this.label(item),
-        btc: item.btc,
-      }));
-    },
-    hashrateItemsForDisplay() {
-      return this.itemsHashrate.map((item) => ({
-        company: this.company.label,
-        label: this.label(item),
-        hashrate: item.hashrate,
-      }));
-    },
-    maxValProduction() {
-      return Math.max(...this.itemsProduction.map((item) => item.btc));
-    },
-    maxValHodlPosition() {
-      return Math.max(...this.itemsHodlPosition.map((item) => item.btc));
-    },
-    maxValHashrate() {
-      return Math.max(...this.itemsHashrate.map((item) => item.hashrate));
-    },
-  },
-  methods: {
-    label(item) {
-      let label = "";
-      if (this.filterResolution.value === "monthly") {
-        label = `${item.month}/${item.year}`;
-      } else if (this.filterResolution.value === "quarterly") {
-        label = `Q${item.quarter} / ${item.year}`;
-      }
-      return label;
-    },
-    updateProductionData() {
-      const hasCompany = this.route ? true : false;
-      const validCompany = this.stocks.some((stock) => stock.id === this.route);
+
+    let itemsHodlPosition = reactive({ data: [] });
+    const updateHodlPositionData = () => {
+      const hasCompany = route.value ? true : false;
+      const validCompany = stocks.some((stock) => stock.id === route.value);
       if (hasCompany && validCompany) {
-        this.itemsProduction = btcProduction
-          .find((item) => item.name === this.route)
-          .stats.filter((item) => item.type === this.filterResolution.value);
+        itemsHodlPosition.data = btcHodlPosition
+          .find((item) => item.name === route.value)
+          .stats.filter((item) => item.type === filterResolution.value);
       }
-    },
-    updateHodlPositionData() {
-      const hasCompany = this.route ? true : false;
-      const validCompany = this.stocks.some((stock) => stock.id === this.route);
+    };
+
+    let itemsHashrate = reactive({ data: [] });
+    const updateHashrateData = () => {
+      const hasCompany = route.value ? true : false;
+      const validCompany = stocks.some((stock) => stock.id === route.value);
       if (hasCompany && validCompany) {
-        this.itemsHodlPosition = btcHodlPosition
-          .find((item) => item.name === this.route)
-          .stats.filter((item) => item.type === this.filterResolution.value);
+        itemsHashrate.data = btcHashrate
+          .find((item) => item.name === route.value)
+          .stats.filter((item) => item.type === filterResolution.value);
       }
-    },
-    updateHashrateData() {
-      const hasCompany = this.route ? true : false;
-      const validCompany = this.stocks.some((stock) => stock.id === this.route);
-      if (hasCompany && validCompany) {
-        this.itemsHashrate = btcHashrate
-          .find((item) => item.name === this.route)
-          .stats.filter((item) => item.type === this.filterResolution.value);
-      }
-    },
-  },
-  created() {
-    this.updateProductionData();
-    this.updateHodlPositionData();
-    this.updateHashrateData();
-  },
-  watch: {
-    $route() {
-      this.updateProductionData();
-      this.updateHodlPositionData();
-      this.updateHashrateData();
-    },
-    filterResolution: {
-      handler() {
-        this.updateProductionData();
-        this.updateHodlPositionData();
-        this.updateHashrateData();
+    };
+
+    updateProductionData();
+    updateHodlPositionData();
+    updateHashrateData();
+
+    watch(
+      route,
+      () => {
+        updateProductionData();
+        updateHodlPositionData();
+        updateHashrateData();
       },
-      deep: true
-    },
+      { deep: true }
+    );
+    watch(
+      filterResolution,
+      () => {
+        updateProductionData();
+        updateHodlPositionData();
+        updateHashrateData();
+      },
+      { deep: true }
+    );
+
+    const productionItemsForDisplay = computed(() =>
+      itemsProduction.data
+        .filter((item) => item.type === filterResolution.value)
+        .map((item) => ({
+          company: company.value.label,
+          label: chartLabel(item, filterResolution),
+          btc: item.btc,
+        }))
+    );
+    const hodlPositionItemsForDisplay = computed(() =>
+      itemsHodlPosition.data
+        .filter((item) => item.type === filterResolution.value)
+        .map((item) => ({
+          company: company.value.label,
+          label: chartLabel(item, filterResolution),
+          btc: item.btc,
+        }))
+    );
+    const hashrateItemsForDisplay = computed(() =>
+      itemsHashrate.data
+        .filter((item) => item.type === filterResolution.value)
+        .map((item) => ({
+          company: company.value.label,
+          label: chartLabel(item, filterResolution),
+          hashrate: item.hashrate,
+        }))
+    );
+
+    const maxValProduction = computed(() =>
+      Math.max(...itemsProduction.data.map((item) => item.btc))
+    );
+    const maxValHodlPosition = computed(() =>
+      Math.max(...itemsHodlPosition.data.map((item) => item.btc))
+    );
+    const maxValHashrate = computed(() =>
+      Math.max(...itemsHashrate.data.map((item) => item.hashrate))
+    );
+
+    return {
+      filterResolution,
+      route,
+      company,
+      productionItemsForDisplay,
+      hodlPositionItemsForDisplay,
+      hashrateItemsForDisplay,
+      maxValProduction,
+      maxValHodlPosition,
+      maxValHashrate,
+    };
   },
 };
 </script>
