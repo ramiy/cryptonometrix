@@ -1,7 +1,7 @@
 <template>
   <h1><strong>Crypto</strong>nometrix</h1>
 
-  <Card heading="Welcome">
+  <Card>
     <img
       src="/assets/img/hero.png"
       alt="Cryptonometrix hero image"
@@ -35,3 +35,16 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+h1 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+</style>
